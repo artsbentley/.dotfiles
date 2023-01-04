@@ -1,3 +1,13 @@
+-- TODO
+--remap 0 to move up and down highlighted text (might be a default feature)	
+--
+--
+
+
+-- recenter screen to current line after moving half a page down or up
+map("n", "<C-d>", "<C-d>:normal z.")
+map("n", "<C-u>", "<C-u>:normal z.")
+
 -- Map leader to <Space>
 map("n", " ", "<Nop>", { silent = true, remap = false })
 vim.g.mapleader = " "
