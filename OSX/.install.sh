@@ -12,6 +12,8 @@ brew tap FelixKratz/formulae
 
 #brew formulae
 echo "Installing Brew Formulae..."
+#neovim dependencies
+brew install ninja libtool automake cmake pkg-config gettext curl
 brew install neovim
 brew install starship
 brew install alfred
@@ -92,4 +94,4 @@ brew services start sketchybar
 
 
 
-echo "Installation complete...\nRun nvim +PackerSync and Restart..."
+echo "Installation complete...."

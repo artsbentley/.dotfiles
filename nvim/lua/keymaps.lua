@@ -1,3 +1,8 @@
+local builtin = require('telescope.builtin')
+local nmap = vim.api.nvim_set_keymap
+local map = vim.keymap.set
+local set = vim.opt
+local defaults = { noremap = true, silent = true }
 -- TODO
 --remap 0 to move up and down highlighted text (might be a default feature)	
 --
