@@ -15,6 +15,8 @@ echo "Installing Brew Formulae..."
 #neovim dependencies
 brew install ninja libtool automake cmake pkg-config gettext curl
 brew install neovim
+# github cli
+brew install gh
 brew install starship
 brew install alfred
 brew install zsh-autosuggestions
@@ -32,8 +34,12 @@ brew install jq
 brew install lulu
 brew install lf
 brew install tmux
+# directory traversing sugar
+brew install exa
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
+brew install lazygit
+# dependency for telescope live_grep:
+brew install ripgrep
 
 
 #brew install svim --gives vim commands to mac input fields
