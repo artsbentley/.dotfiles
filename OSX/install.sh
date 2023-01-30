@@ -40,6 +40,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 brew install lazygit
 # dependency for telescope live_grep:
 brew install ripgrep
+brew install lazydocker
 
 
 #brew install svim --gives vim commands to mac input fields
