@@ -6,6 +6,7 @@ echo "Installing Brew..."
 brew analytics off
 
 brew tap homebrew/cask-fonts
+brew tap epk/epk
 brew tap koekeishiya/formulae
 brew tap FelixKratz/formulae
 
@@ -41,6 +42,9 @@ brew install lazygit
 # dependency for telescope live_grep:
 brew install ripgrep
 brew install lazydocker
+brew install zoxide
+brew install fzf
+brew install alacritty
 
 
 #brew install svim --gives vim commands to mac input fields
@@ -79,6 +83,7 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
 # Installing Fonts
 echo "Installing fonts..."
+brew install --cask font-sf-mono-nerd-font
 git clone https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized /tmp/SFMono_Nerd_Font
 mv /tmp/SFMono_Nerd_Font/* $HOME/Library/Fonts
 rm -rf /tmp/SFMono_Nerd_Font/
