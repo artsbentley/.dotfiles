@@ -20,7 +20,7 @@ if [ ! -d $HOME/.config ]; then
     mkdir -p $HOME/.config
 fi
 # configs=$( find -path "$DOTFILES/config.symlink" -maxdepth 1 )
-for config in $DOTFILES/config/*; do
+for config in $DOTFILES/.config/*; do
     target=$HOME/.config/$( basename $config )
     if [ -e $target ]; then
         echo "~${target#$HOME} already exists... Skipping."
@@ -30,3 +30,6 @@ for config in $DOTFILES/config/*; do
     fi
 done
 
+#yabai linking
+ln -s "${HOME}/.dotfiles/.config/yabai/yabairc" "${HOME}/.yabairc"
+ln -s "${HOME}/.dotfiles/.config/yabai/skhdrc" "${HOME}/.skhdrc"

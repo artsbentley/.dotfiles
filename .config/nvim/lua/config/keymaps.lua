@@ -2,7 +2,6 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-
 -- harpoon
 vim.keymap.set("n", "<leader>'", "<cmd>lua require('harpoon.mark').add_file()<cr>", { desc = "Add to Harpoon" })
 vim.keymap.set("n", "<leader>0", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", { desc = "Show Harpoon" })
@@ -16,22 +15,18 @@ vim.keymap.set("n", "<leader>7", "<cmd>lua require('harpoon.ui').nav_file(7)<cr>
 vim.keymap.set("n", "<leader>8", "<cmd>lua require('harpoon.ui').nav_file(8)<cr>", { desc = "Harpoon Buffer 8" })
 vim.keymap.set("n", "<leader>9", "<cmd>lua require('harpoon.ui').nav_file(9)<cr>", { desc = "Harpoon Buffer 9" })
 
-
 -- buffer
 vim.keymap.set("n", "<leader>bb", "<cmd>Telescope buffers<cr>", { desc = "Telescope" })
 
-vim.keymap.set('i', 'kj', '<Esc>')
-vim.keymap.set('i', 'jk', '<Esc>')
-vim.keymap.set('v', 'kj', '<Esc>')
-vim.keymap.set('v', 'jk', '<Esc>')
-
-
+vim.keymap.set("i", "kj", "<Esc>")
+vim.keymap.set("i", "jk", "<Esc>")
+vim.keymap.set("v", "kj", "<Esc>")
+vim.keymap.set("v", "jk", "<Esc>")
 
 -- undo
-vim.keymap.set("n", "U", "<C-R")
-
+vim.keymap.set("n", "U", "<C-r")
 
 -- Maintain the cursor position when yanking a visual selection
 -- http://ddrscott.github.io/blog/2016/yank-without-jank/
-keymap('v', 'y', 'myy`hay')
-keymap('v', 'Y', 'myY`y')
+vim.keymap.set("v", "y", "myy`hay")
+vim.keymap.set("v", "Y", "myY`y")
