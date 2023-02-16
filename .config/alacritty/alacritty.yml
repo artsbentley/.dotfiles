@@ -20,12 +20,15 @@ font:
   size: 17.0
 
 window:
-  opacity: 1.0
+  opacity: 0.68
   padding:
     x: 14
     y: 10
   dynamic_padding: false
   decorations: buttonless
+
+import:
+  - ~/.config/alacritty/catppuccin-mocha.yml
 
 # NOTE: helpful hex codes
 # \x1b = escape (useful for vim-related keybindings)
