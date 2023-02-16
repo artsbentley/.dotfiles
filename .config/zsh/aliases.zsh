@@ -1,7 +1,7 @@
 #general usage
-alias ls='exa -l --icons'                                                          # ls
-alias l='exa -lbF -l --git --icons'                                                # list, size, type, git
-alias ll='exa -lbF --git --icons'                                             # long list
+alias ls='exa -l --icons -a'                                                          # ls
+alias ll='exa -l --icons -a'                                                # list, size, type, git
+alias l='exa -lbF -l --icons -a --git'                                             # long list
 alias llm='exa -lbGd --git --sort=modified --icons'                            # long list, modified date sort
 alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale --icons'  # all list
 alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons' # all + extended list
