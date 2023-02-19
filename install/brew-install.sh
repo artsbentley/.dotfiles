@@ -63,7 +63,6 @@ echo "Installing Mac App Store Apps..."
 # macOS Settings
 echo "Changing macOS defaults..."
 defaults write com.apple.dock autohide -bool true
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write NSGlobalDomain _HIHideMenuBar -bool true
 defaults write NSGlobalDomain AppleHighlightColor -string "0.65098 0.85490 0.58431"
 defaults write com.apple.screencapture location -string "$HOME/Desktop"
@@ -76,10 +75,23 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
-defaults write com.apple.finder ShowStatusBar -bool false
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool YES
 defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+
+echo "Enable tap to click (Trackpad)"
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+
+echo "Show Status bar in Finder"
+defaults write com.apple.finder ShowStatusBar -bool true
+
+echo "Don’t animate opening applications from the Dock"
+defaults write com.apple.dock launchanim -bool false
+
+echo "Disable opening and closing window animations"
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+
+echo "finished changing macOS defaults"
 
 # Installing Fonts
 echo "Installing fonts..."
