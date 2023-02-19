@@ -91,6 +91,9 @@ defaults write com.apple.dock launchanim -bool false
 echo "Disable opening and closing window animations"
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 
+# Disable menu bar transparency
+defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
+
 echo "finished changing macOS defaults"
 
 # Installing Fonts
