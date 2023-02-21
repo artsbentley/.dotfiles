@@ -19,7 +19,7 @@ font:
   size: 14.0
   offset:
     x: 0 # For letter spacing.
-    y: 10 # For line spacing.
+    y: 13 # For line spacing.
 
 window:
   opacity: 0.55
