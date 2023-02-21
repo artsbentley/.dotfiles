@@ -23,8 +23,8 @@ vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set("v", "kj", "<Esc>")
 vim.keymap.set("v", "jk", "<Esc>")
 
--- undo
-vim.keymap.set("n", "U", "<C-r")
+-- redo
+vim.keymap.set("n", "U", "<C-r>")
 
 -- Maintain the cursor position when yanking a visual selection
 -- http://ddrscott.github.io/blog/2016/yank-without-jank/
