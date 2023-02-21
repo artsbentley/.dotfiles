@@ -79,6 +79,8 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool YES
 defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
+#TODO defaults for removing mission control shortcuts on arrows + control 
+
 echo "Enable tap to click (Trackpad)"
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 

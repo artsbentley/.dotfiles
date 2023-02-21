@@ -20,4 +20,7 @@ return {
       telescope = true,
     },
   },
+  styles = {
+    comments = { "italic" },
+  },
 }
