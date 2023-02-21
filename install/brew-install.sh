@@ -54,6 +54,7 @@ echo "Installing Brew Casks..."
 
 brew install --cask spotify
 brew install --cask vlc
+brew install --cask karabiner-elements
 
 # Mac App Store Apps
 echo "Installing Mac App Store Apps..."
