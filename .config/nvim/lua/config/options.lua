@@ -21,6 +21,7 @@ vim.o.ch = 0
 
 -- preview of snippets
 vim.opt.completeopt = { "menuone", "noselect" }
+vim.opt.pumblend = 0
 
 -- search
 vim.opt.hlsearch = false
