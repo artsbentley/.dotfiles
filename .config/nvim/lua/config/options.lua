@@ -13,11 +13,14 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- default position
-vim.opt.scrolloff = 25
+vim.opt.scrolloff = 24
 
 -- ex line
 vim.o.ls = 0
 vim.o.ch = 0
+
+-- preview of snippets
+vim.opt.completeopt = { "menuone", "noselect" }
 
 -- search
 vim.opt.hlsearch = false
