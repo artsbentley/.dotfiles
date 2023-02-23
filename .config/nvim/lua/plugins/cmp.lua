@@ -59,10 +59,15 @@ return {
                 completion = { completeopt = "menu,menuone,noinsert,noselect" },
                 -- mapping = require("pynappo/keymaps").cmp.insert(),
                 mapping = cmp.mapping.preset.insert({
-                    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-                    ["<C-u>"] = cmp.mapping.scroll_docs(4),
+                    ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+                    ["<C-d>"] = cmp.mapping.scroll_docs(4),
                     ["<C-Space>"] = cmp.mapping.complete(),
-                    ["<Tab>"] = cmp.mupping.confirm({ select = true }),
+                    ["<Tab>"] = cmp.mapping.confirm({ select = true }),
+                    ["<CR>"] = cmp.config.disable,
+                    -- ["<C-p>"] = cmp.mapping.select_prev_item(),
+                    -- ["<C-n>"] = cmp.mapping.select_next_item(),
+                    ["<Left>"] = cmp.mapping.abort(),
+                    ["<Right>"] = cmp.mapping.confirm(),
                 }),
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
@@ -73,7 +78,7 @@ return {
                     { name = "copilot" },
                     { name = "path" },
                     { name = "nvim_lua" },
-                    { max_item_count = 4 },
+                    -- { max_item_count = 4 },
                 }, {
                     {
                         name = "buffer",
