@@ -13,7 +13,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- default position
-vim.opt.scrolloff = 24
+vim.opt.scrolloff = 25
 
 -- ex line
 vim.o.ls = 0

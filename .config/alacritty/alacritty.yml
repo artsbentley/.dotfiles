@@ -16,7 +16,7 @@ font:
   normal:
     family: "SFMono Nerd Font"
     style: Medium
-  size: 14.0
+  size: 16.0
   offset:
     x: 0 # For letter spacing.
     y: 13 # For line spacing.

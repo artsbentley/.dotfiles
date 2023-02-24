@@ -11,7 +11,9 @@ alias lS='exa -1'                                                              #
 alias lt='exa --tree --level=2'                                         # tree
 
 
+#vim aliases
 alias vim="nvim"
+alias v="nvim +GoToFile" #opens telescope immediately
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -20,3 +22,5 @@ alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
 alias c="clear"
+
+
