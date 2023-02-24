@@ -1,1 +1,1 @@
-- [] create tmux zoom prefix
+-[] create tmux zoom prefix
