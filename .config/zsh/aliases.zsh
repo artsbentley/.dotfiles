@@ -23,4 +23,5 @@ alias ......="cd ../../../../.."
 
 alias c="clear"
 
-
+# help manual
+alias help='run-help'
