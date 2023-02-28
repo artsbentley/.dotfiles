@@ -45,7 +45,7 @@ brew install lazydocker
 brew install zoxide
 brew install fzf
 brew install alacritty
-
+brew install rustup
 
 #brew install svim --gives vim commands to mac input fields
 
