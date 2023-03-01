@@ -6,10 +6,16 @@
 - [ ] use harpoon instead instead of buffers, figure out how to delete linked files
 - [ ] configure LF and LFCD properly
 
-- [ ] potential use of mini.16 for colorscheming
+e- [ ] potential use of mini.16 for colorscheming
+
 - [ ] when in tmux navigation layer on keyboard, make it that f key zooms in on a tab
-  - [ ] make it that any combination can trigger the navigation mode instead of carefully having to press certain combos first, ie first navigation key and then the right thumb
+- [ ] make it that any combination can trigger the navigation mode instead of carefully having to press certain combos first, ie first navigation key and then the right thumb
 - [ ] adjust C-d and C-u in vim to scroll less
+
+## dotfiles/ config
+
+- [ ] checkout dotfiles manager for symlinking -> stow?
+- [ ] the following repo for example of install.sh and sketchybar; https://github.com/FelixKratz/dotfiles/blob/master/.install.sh
 
 ## nvim
 
