@@ -998,7 +998,3 @@ l
 cd e2e_functional_monitoring
 l
 v
-l
-cd app
-v
-make all

@@ -18,8 +18,12 @@
 - [ ] make it easier to escape the auto bracketing
 - [ ] copilot accept single word only, see; https://www.reddit.com/r/neovim/comments/11ci5ik/copilot_is_no_longer_a_nuisance_for_me/
 - [ ] create a command to easily split buffers or a setting to open new files always in a split
+- [ ] tab + cmd shows next word/ line output for copilot
+- [ ] way to open files in tmux instead of nvim buffers (in LF?)
 
 check out this repo for inspiration on colorscheming/ tmux panel sizing and install scripts: https://github.com/nicknisi/dotfiles
+
+- [ ] keymap shortcut for returning to the previous placement, currently using C-o
 
 ## tmux
 
