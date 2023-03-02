@@ -16,9 +16,10 @@ return {
                 window = {
                     completion = {
                         -- winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+                        border = "rounded",
+                        -- border = nil,
                         col_offset = -3,
                         side_padding = 0,
-                        border = nil,
                         scrollbar = "║",
                     },
                     -- creates the corners of the window
