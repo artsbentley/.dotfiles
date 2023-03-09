@@ -46,6 +46,7 @@ brew install zoxide
 brew install fzf
 brew install alacritty
 brew install rustup
+brew install bat
 
 #brew install svim --gives vim commands to mac input fields
 
@@ -64,10 +65,10 @@ echo "Installing Mac App Store Apps..."
 # macOS Settings
 echo "Changing macOS defaults..."
 defaults write com.apple.dock autohide -bool true
-defaults write NSGlobalDomain _HIHideMenuBar -bool true
+defaults write NSGlobalDomain _HIHideMenuBar -bool false
 defaults write NSGlobalDomain AppleHighlightColor -string "0.65098 0.85490 0.58431"
+defaulte write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 defaults write com.apple.screencapture location -string "$HOME/Desktop"
-defaults write com.apple.finder DisableAllAnimations -bool true
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false

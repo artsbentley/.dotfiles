@@ -20,6 +20,10 @@ return {
                 operators = {},
             },
 
+            -- currently breaks styles entirely
+            -- no_italic = "false",
+            -- no_bold = "false",
+
             flavour = "mocha", -- latte, frappe, macchiato, or mocha
             transparent_background = true,
             color_overrides = {

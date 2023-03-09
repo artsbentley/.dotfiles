@@ -21,10 +21,13 @@
 - [ ] tab + cmd shows next word/ line output for copilot
 - [ ] way to open files in tmux instead of nvim buffers (in LF?)
 - [ ] implement git telescope plugin: https://github.com/aaronhallaert/ts-advanced-git-search.nvim
+- [ ] zettelkasten package + glow (or any other .md viewer)
+- [ ] venn.nvim (drawing ascii diagrams)
 
 check out this repo for inspiration on colorscheming/ tmux panel sizing and install scripts: https://github.com/nicknisi/dotfiles
 
 - [ ] keymap shortcut for returning to the previous placement, currently using C-o
+- [ ] i want keyboard shortcuts that work to switch tmux panes to also make me able to switch between nvim windows so that i can navigate faster, in particularly with neotree
 
 ## tmux
 
@@ -43,7 +46,11 @@ check out this repo for inspiration on colorscheming/ tmux panel sizing and inst
 - [ ] add zoom in and out to tmux nav keymap
 - [ ] in nav mode, replace delete with opt key
 - [ ] combo for C-d an C-u
+- [ ] create harpoon activation for the num layer - combine with alacritty shortcuts
 
 ## Mac
 
+- [ ] align vimium shortcuts for tab navigation with the tmux and nvim keymaps for smoother navigation. look into surfingkeys vs tridactyl
+- [ ] install spotify tui and setup shortcuts for in alacritty or nvim like lazygit
+- [ ] look into a solution for notetaking -> see telekasten.nvim
 - [ ] create shortcuts for making faster connection between headphones and laptop speakers
