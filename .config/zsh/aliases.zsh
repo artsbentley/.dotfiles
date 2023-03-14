@@ -23,5 +23,12 @@ alias ......="cd ../../../../.."
 
 alias c="clear"
 
+alias echopath="echo $PATH | tr ':' '\n'"
+
+# not working
+# alias addbinpath="export PATH=$PATH:$(pwd)"
+
+
+
 # help manual
 alias help='run-help'
