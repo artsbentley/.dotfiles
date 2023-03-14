@@ -5,7 +5,10 @@
 - [ ] checkout dotfiles manager for symlinking -> stow?
 - [ ] the following repo for example of install.sh and sketchybar; https://github.com/FelixKratz/dotfiles/blob/master/.install.sh
 - [ ] configure LF and LFCD properly
-- [ ] add TUI applications: Dooit and Termtyper
+- [ ] add TUI applications:
+  - [ ] taskwarrior
+  - [ ] Dooit?
+  - [ ] termtyper
 
 ## nvim
 
