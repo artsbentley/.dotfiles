@@ -29,6 +29,9 @@ alias echopath="echo $PATH | tr ':' '\n'"
 # alias addbinpath="export PATH=$PATH:$(pwd)"
 
 
+#task warrior
+alias ta="task add"
+alias tl="task list"
 
 # help manual
 alias help='run-help'

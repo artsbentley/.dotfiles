@@ -6,9 +6,14 @@
 - [ ] the following repo for example of install.sh and sketchybar; https://github.com/FelixKratz/dotfiles/blob/master/.install.sh
 - [ ] configure LF and LFCD properly
 - [ ] add TUI applications:
-  - [ ] taskwarrior
-  - [ ] Dooit?
+  - [x] taskwarrior
   - [ ] termtyper
+
+## taskwarrior
+
+- [ ] add alias or bash script for dailies: show goals from yesterday with tag KPN, show tasks that need to be completed today. (create similar script for weekly meetings?)
+- [ ] syncthing the data instead of on git
+- [ ] vim plugin that automatically assigns task to corresponding git repository that taskwarrior is opened in?
 
 ## nvim
 
@@ -26,6 +31,7 @@
 - [ ] implement git telescope plugin: https://github.com/aaronhallaert/ts-advanced-git-search.nvim
 - [ ] zettelkasten package + glow (or any other .md viewer)
 - [ ] venn.nvim (drawing ascii diagrams)
+- [ ] treeSJ
 
 check out this repo for inspiration on colorscheming/ tmux panel sizing and install scripts: https://github.com/nicknisi/dotfiles
 
@@ -34,14 +40,17 @@ check out this repo for inspiration on colorscheming/ tmux panel sizing and inst
 
 ## tmux
 
+- [ ] have standerdized tmux session indexes for most used sessions, ie; taskwarrior is always #1, dotfiles always #2, etc.
 - [ ] shortcuts for keeb switching tabs
 - [x] create tmux zoom prefix
 - [ ] create shortcut that can automatically format tmux windows to smaller sizes or back to even split
 - [ ] when in tmux navigation layer on keyboard, make it that f key zooms in on a tab
 - [ ] add colored border for zoomed panes
+- [ ] alacritty + zsh shortcuts for VIT, spotify-tui and taskwarrior
 
 ## keymap
 
+- [ ] free up the thumb key and place backspace on a homerow combo -[ ] rethink terminal navigation layer for on thumbkey?
 - [ ] fix the certain symbols not working on keeb in vim like ";"
 - [ ] make it that any combination can trigger the navigation mode instead of carefully having to press certain combos first, ie first navigation key and then the right thumb
 - [ ] remove press hold on tiling window key

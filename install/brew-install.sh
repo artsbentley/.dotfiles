@@ -48,7 +48,7 @@ brew install alacritty
 brew install rustup
 brew install bat
 brew install taskwarrior-tui
-brew install vit
+brew install spotify-tui
 
 #brew install svim --gives vim commands to mac input fields
 
