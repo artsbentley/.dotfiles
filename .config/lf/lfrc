@@ -10,6 +10,7 @@
 
 set hidden on
 set icons
+set editor vim
 set previewer ~/.dotfiles/.config/lf/previewer.sh
 set promptfmt "\033[34;1m%d\033[0m\033[1m%f\033[0m"
 set shell bash
@@ -27,7 +28,7 @@ map X !$f
 # dedicated keys for file opener actions
 map o !open !$f
 # map o $(mimeopen %f)
-map O $(mimeopen --ask %f)
+map O $(mimeopen --ask $f)
 
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
@@ -35,7 +36,7 @@ map O $(mimeopen --ask %f)
 # text files and a file opener for the rest.
 cmd open ${{
     case $(file --mime-type $f -b) in
-        text/*) $EDITOR $fx;;
+        text/*) nvim $fx;;
         *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
 }}
@@ -131,5 +132,5 @@ map gs ${{clear; git status; echo "press ENTER"; read ENTER}}
 map gl ${{clear; git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit}}
 
 map E %nvr --remote $fx
-map f $vi $(fzf)
+map f $nvim $(fzf)
 
