@@ -12,6 +12,7 @@ alias lt='exa --tree --level=2'                                         # tree
 
 
 #vim aliases
+alias vi="nvim"
 alias vim="nvim"
 alias v="nvim +GoToFile" #opens telescope immediately
 
