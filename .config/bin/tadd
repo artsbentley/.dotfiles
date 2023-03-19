@@ -1,30 +1,22 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
+
+export FZF_DEFAULT_OPTS='--height=20% --layout=reverse-list --border'
 
 # Get the project for the task
 project=$(task _unique project | fzf --prompt="Project: ")
-clear
+[[ -z $project ]] && read -p "Project not found. Enter project name: " project
 
 # Get all tags to be added to the task with fzf --multi
-tags=$(task _unique tags | fzf --multi --prompt="Tags: ")
-tags=$(echo "$tags" | sed 's/^/+/;s/\ /\ +/')
-clear
+tags=$(task _unique tags | fzf --no-multi --prompt="Tags: ")
+[[ -n $tags ]] && tags=$(echo "$tags" | sed 's/^/+/;s/\ /\ +/')
 
-# Get duedate if ther is one
-echo "What is the due date? Today? [Y/N]"
-read -r due_response
-
-case "$due_response" in
-[yY]) duedate=$(date --rfc-3339=seconds | awk '{print $1}') ;;
-[nN]) clear && echo "Enter date as 'YYYY-MM-DD or +#[ymd]'" && read -r duedate ;;
-*) duedate="" ;;
-esac
-clear
+# Due date
+echo "Due date if needed" && read -r due_response
+duedate="${due_response:-}"
 
 # Get the name of the task
-echo "What is the name of this task?"
-read -r task_name
-clear
+echo "Task name:" && read -r task_name
 
 # Putting it all together
-printf -v create "project:%s %s due:%s %s\n" "$project" "$tags" "$duedate" "$task_name"
-task add $(echo "$create")
+printf -v create "project:%s %s due:%s %s" "$project" "$tags" "$duedate" "$task_name"
+task add $create && echo "Task added successfully: $create"
