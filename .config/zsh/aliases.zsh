@@ -10,6 +10,8 @@ alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons' #
 alias lS='exa -1'                                                              # one column, just names
 alias lt='exa --tree --level=2'                                         # tree
 
+#SSH
+alias ssh="TERM=xterm-256color ssh"
 
 #vim aliases
 alias vi="nvim"

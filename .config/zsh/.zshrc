@@ -1,4 +1,6 @@
 export PATH=/opt/homebrew/bin:$PATH
+export PATH=$PATH:$HOME/.dotfiles/.config/bin/
+
 export EDITOR="nvim"
 
 #enable vi mode

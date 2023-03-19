@@ -59,6 +59,7 @@ brew install --cask spotify
 brew install --cask vlc
 brew install --cask karabiner-elements
 brew install --cask bettertouchtool
+brew install --cask telegram
 
 # Mac App Store Apps
 echo "Installing Mac App Store Apps..."
