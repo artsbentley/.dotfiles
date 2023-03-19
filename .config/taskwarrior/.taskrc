@@ -17,7 +17,7 @@
 # Files
 data.location=/Users/arar/.task/.task
 reportformat=Y-M-D
-
+export EDITOR="nvim"
 # To use the default location of the XDG directories,
 # move this configuration file from ~/.taskrc to ~/.config/task/taskrc and uncomment below
 
