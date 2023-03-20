@@ -4,7 +4,6 @@ return {
         { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
         { "zbirenbaum/copilot-cmp" },
     },
-               he
     opts = function(_, opts)
         local cmp = require("cmp")
         opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "copilot" } }))
