@@ -9,6 +9,7 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 -- setting custom commands
 vim.cmd([[command! -nargs=0 GoToFile :Telescope find_files]])
 vim.cmd([[command! -nargs=0 CreateNewNote :Telekasten new_note]])
+vim.cmd([[command! -nargs=0 FindNote :Telekasten find_notes]])
 
 require("lazy").setup({
     spec = {
