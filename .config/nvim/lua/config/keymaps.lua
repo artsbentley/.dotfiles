@@ -7,13 +7,9 @@
 local function toggle_diagnostics()
     local diagnostics_on = require("lsp_lines").toggle()
     if diagnostics_on then
-        vim.diagnostic.config({
-            virtual_text = false,
-        })
+        vim.diagnostic.config({ virtual_text = false })
     else
-        vim.diagnostic.config({
-            virtual_text = { spacing = 4, prefix = "●" },
-        })
+        vim.diagnostic.config({ virtual_text = { spacing = 4, prefix = "●" } })
     end
 end
 
