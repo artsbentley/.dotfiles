@@ -17,6 +17,7 @@ alias ssh="TERM=xterm-256color ssh"
 alias vi="nvim"
 alias vim="nvim"
 alias v="nvim +GoToFile" #opens telescope immediately
+alias nn="nvim +CreateNewNote" #opens nvim and creates a new telekasten note
 
 alias ..="cd .."
 alias ...="cd ../.."

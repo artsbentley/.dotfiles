@@ -6,7 +6,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+-- setting custom commands
 vim.cmd([[command! -nargs=0 GoToFile :Telescope find_files]])
+vim.cmd([[command! -nargs=0 CreateNewNote :Telekasten new_note]])
 
 require("lazy").setup({
     spec = {

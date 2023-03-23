@@ -6,6 +6,11 @@ return {
     config = function()
         require("telekasten").setup({
             home = vim.fn.expand("~/wiki/home"), -- Put the name of your notes directory here
+
+            template_new_note = "/Users/arar/wiki/home/templates/newnote.md",
+
+            follow_creates_nonexisting = true,
+
             -- template_new_note = "~/wiki/", -- template for new notes
             -- vaults = {
             --     KPN = {
