@@ -25,6 +25,7 @@ alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
 alias c="clear"
+alias home="cd ~"
 
 alias echopath="echo $PATH | tr ':' '\n'"
 
