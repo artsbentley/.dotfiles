@@ -59,8 +59,8 @@ key_bindings:
   - { key: Right, mods: Control|Shift, chars: "\x02n" }
 
   - { key: Comma, mods: Command, chars: "\x02," } # rename the current tmux window
-  - { key: E, mods: Command, chars: "\x02\"" } # split tmux window vertically
-  - { key: E, mods: Command|Shift, chars: "\x02%" } # split tmux window horizontally
+  - { key: E, mods: Command|Shift, chars: "\x02\"" } # split tmux window vertically
+  - { key: E, mods: Command, chars: "\x02%" } # split tmux window horizontally
   - { key: F, mods: Command|Shift, chars: "\x02\x5b\x2f" } # start tmux search mode
   - { key: F, mods: Command, chars: "lfcd\n" } # open file manager 'gokcehan/lf'
   - { key: G, mods: Command, chars: "\x02g" } # open git manager 'jesseduffield/lazygit'
