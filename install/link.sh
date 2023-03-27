@@ -32,4 +32,4 @@ done
 
 #yabai linking
 ln -s "${HOME}/.dotfiles/.config/yabai/yabairc" "${HOME}/.yabairc"
-ln -s "${HOME}/.dotfiles/.config/yabai/skhdrc" "${HOME}/.skhdrc"
+ln -s "${HOME}/.dotfiles/.config/skhd/skhdrc" "${HOME}/.skhdrc"
