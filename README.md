@@ -16,6 +16,12 @@
 - [ ] syncthing the data instead of on git
 - [ ] vim plugin that automatically assigns task to corresponding git repository that taskwarrior is opened in?
 
+### notetaking
+
+- [ ] with telekasten/ markdown in nvim, i want to be able to put "#TODO" so i can make action points while taking business notes or creating a daily todo list.
+- [ ] i want to be able to have due dates for my todo's so that i can organize and sort them by that, maybe in telescope
+- at the moment, only this prompt is working: Telescope grep_string search=#TODO search_dirs={'$WIKI_DIR'}
+
 ## nvim
 
 - [ ] use harpoon instead instead of buffers, figure out how to delete linked files
@@ -48,6 +54,7 @@ check out this repo for inspiration on colorscheming/ tmux panel sizing and inst
 - [ ] when in tmux navigation layer on keyboard, make it that f key zooms in on a tab
 - [ ] add colored border for zoomed panes
 - [ ] alacritty + zsh shortcuts for VIT, spotify-tui and taskwarrior
+- [ ] add continuum and resurrect
 
 ## keymap
 

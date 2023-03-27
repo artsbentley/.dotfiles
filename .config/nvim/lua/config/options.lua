@@ -43,7 +43,7 @@ vim.opt.cursorline = true -- Enable highlighting of the current line
 vim.opt.expandtab = true -- Use spaces instead of tabs
 vim.opt.tabstop = 1
 vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 15
+vim.opt.shiftwidth = 4
 vim.opt.smartindent = true
 
 -- backup

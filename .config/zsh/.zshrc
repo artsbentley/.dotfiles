@@ -1,18 +1,15 @@
-function add_to_path_if_not_exists() {
+function add_to_path() {
+# checks if $1 is in $PATH and adds it if not
   local dir="$1"
   [[ ":$PATH:" != *":$dir:"* ]] && export PATH="$dir:$PATH"
 }
 
-add_to_path_if_not_exists "$HOME/.dotfiles/.config/bin/"
-add_to_path_if_not_exists "/opt/homebrew/bin"
-
-# export PATH=/opt/homebrew/bin:$PATH
-# export PATH=$PATH:$HOME/.dotfiles/.config/bin/
+add_to_path "$HOME/.dotfiles/.config/bin/"
+add_to_path "/opt/homebrew/bin"
 
 export EDITOR=$(which nvim)
 export VISUAL=$(which nvim)
-
-#enable vi mode
+export WIKI_DIR="$HOME/wiki/home"
 
 #enable vi mode
 bindkey -v
