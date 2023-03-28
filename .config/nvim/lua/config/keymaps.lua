@@ -17,20 +17,30 @@ vim.keymap.set("n", "<Leader>ui", toggle_diagnostics, { desc = "Toggle [i]nline 
 
 -- TELESCOPE
 -- live grep additonal arguments: https://github.com/nvim-telescope/telescope.nvim/issues/564
-local actions = require("telescope.actions")
+-- local actions = require("telescope.actions")
+-- require("telescope").setup({
+--     -- defaults = { },
+--     pickers = {
+--         live_grep = {
+--             mappings = {
+--                 i = { ["<C-a>"] = actions.to_fuzzy_refine },
+--                 n = { ["<C-a>"] = actions.to_fuzzy_refine },
+--             },
+--         },
+--     },
+--     -- extensions = { },
+-- })
+
 require("telescope").setup({
-    -- defaults = { },
     pickers = {
         live_grep = {
-            mappings = {
-                i = { ["<C-a>"] = actions.to_fuzzy_refine },
-                n = { ["<C-a>"] = actions.to_fuzzy_refine },
-            },
+            on_input_filter_cb = function(prompt)
+                -- AND operator for live_grep like how fzf handles spaces with wildcards in rg
+                return { prompt = prompt:gsub("%s", ".*") }
+            end,
         },
     },
-    -- extensions = { },
 })
-
 -- TELEKASTEN
 -- -- Launch panel if nothing is typed after <leader>z
 vim.keymap.set("n", "<leader>z", "<cmd>Telekasten panel<CR>")

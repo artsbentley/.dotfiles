@@ -22,6 +22,12 @@
 - [ ] i want to be able to have due dates for my todo's so that i can organize and sort them by that, maybe in telescope
 - at the moment, only this prompt is working: Telescope grep_string search=#TODO search_dirs={'$WIKI_DIR'}
 
+## alacritty
+
+- [ ] add nvim split buffer to shortcut, just like current cmd + E
+  - [ ] make it that cmd + Z also works on vim buffers in that case
+  - [ ] do i want it to always be a new terminal panel? or an actual vim split
+
 ## nvim
 
 - [ ] use harpoon instead instead of buffers, figure out how to delete linked files
