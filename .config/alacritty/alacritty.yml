@@ -75,6 +75,7 @@ key_bindings:
   - { key: P, mods: Command|Shift, chars: ":GoToCommand\n" } # commands
   - { key: N, mods: Command, chars: ":CreateNewNote\n" } # enters neovim and immediatly creates a new telekasten note
   - { key: N, mods: Command|Shift, chars: ":FindNote\n" } # enters neovim and immediatly searches a new telekasten note
+  - { key: N, mods: Control, chars: ":LiveGrepNote\n" } # enters neovim and immediatly searches a new telekasten note
   # - { key: Period, mods: Command, chars: "\x1b\x20\x2e\x0a" } (causes popup to be unfocused)
   - { key: Q, mods: Command, chars: ":q\n" } # quit vim
   - { key: R, mods: Command, chars: "\x1b\x5b\x41\x0a" }

@@ -1,0 +1,35 @@
+return {}
+-- return {
+--     "telescope.nvim",
+--     priority = 1001,
+--     dependencies = {
+--         "natecraddock/telescope-zf-native.nvim",
+--         -- "nvim-telescope/telescope-fzf-native.nvim",
+--         -- build = "make",
+--         config = require("telescope").setup({
+--             extensions = {
+--                 ["zf-native"] = {
+--                     -- options for sorting file-like items
+--                     file = {
+--                         -- override default telescope file sorter
+--                         enable = true,
+--                         -- highlight matching text in results
+--                         highlight_results = true,
+--                         -- enable zf filename match priority
+--                         match_filename = true,
+--                     },
+--                     -- options for sorting all other items
+--                     generic = {
+--                         -- override default telescope generic item sorter
+--                         enable = true,
+--                         -- highlight matching text in results
+--                         highlight_results = true,
+--                         -- disable zf filename match priority
+--                         match_filename = false,
+--                     },
+--                 },
+--             },
+--             require("telescope").load_extension("zf-native"),
+--         }),
+--     },
+-- }

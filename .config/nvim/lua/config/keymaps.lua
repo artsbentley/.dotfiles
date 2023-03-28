@@ -15,6 +15,22 @@ end
 
 vim.keymap.set("n", "<Leader>ui", toggle_diagnostics, { desc = "Toggle [i]nline diagnostic type" })
 
+-- TELESCOPE
+-- live grep additonal arguments: https://github.com/nvim-telescope/telescope.nvim/issues/564
+local actions = require("telescope.actions")
+require("telescope").setup({
+    -- defaults = { },
+    pickers = {
+        live_grep = {
+            mappings = {
+                i = { ["<C-a>"] = actions.to_fuzzy_refine },
+                n = { ["<C-a>"] = actions.to_fuzzy_refine },
+            },
+        },
+    },
+    -- extensions = { },
+})
+
 -- TELEKASTEN
 -- -- Launch panel if nothing is typed after <leader>z
 vim.keymap.set("n", "<leader>z", "<cmd>Telekasten panel<CR>")

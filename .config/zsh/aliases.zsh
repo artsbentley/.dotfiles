@@ -19,10 +19,12 @@ alias vim="nvim"
 alias v="nvim +GoToFile" #opens telescope immediately
 alias nn="nvim +CreateNewNote" #opens nvim and creates a new telekasten note
 alias fn="nvim +FindNote" #opens nvim and looks for telekasten notes
+
 #makes sure that the alacritty shortcut work inside and outside of nvim
 alias :GoToFile="nvim +GoToFile"
 alias :CreateNewNote="nvim +CreateNewNote"
 alias :FindNote="nvim +FindNote"
+alias :LiveGrepNote="nvim +LiveGrepNote"
 
 
 alias ..="cd .."
