@@ -16,6 +16,15 @@ font:
   normal:
     family: "SFMono Nerd Font"
     style: Medium
+
+  italic:
+    family: "SFMono Nerd Font"
+    style: Medium italic
+
+  bold:
+    family: "SFMono Nerd Font"
+    style: Bold
+
   size: 16.0
   offset:
     x: 0 # For letter spacing.

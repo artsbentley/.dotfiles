@@ -31,6 +31,7 @@ vim.keymap.set("n", "<Leader>ui", toggle_diagnostics, { desc = "Toggle [i]nline 
 --     -- extensions = { },
 -- })
 
+-- source: https://www.reddit.com/r/neovim/comments/udx0fi/telescopebuiltinlive_grep_and_operator/
 require("telescope").setup({
     pickers = {
         live_grep = {

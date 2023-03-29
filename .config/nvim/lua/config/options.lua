@@ -57,7 +57,8 @@ vim.opt.spell = false
 vim.opt.spelllang = { "en_us" }
 
 -- misc
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
+vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20"
 vim.opt.isfname:append("@-@")
 vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 50
