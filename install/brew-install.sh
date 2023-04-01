@@ -49,6 +49,7 @@ brew install rustup
 brew install bat
 brew install taskwarrior-tui
 brew install spotify-tui
+brew install just
 
 #brew install svim --gives vim commands to mac input fields
 
@@ -60,6 +61,7 @@ brew install --cask vlc
 brew install --cask karabiner-elements
 brew install --cask bettertouchtool
 brew install --cask telegram
+brew install --cask google-drive
 
 # Mac App Store Apps
 echo "Installing Mac App Store Apps..."
