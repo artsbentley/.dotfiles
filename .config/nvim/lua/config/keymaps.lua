@@ -80,7 +80,6 @@ vim.keymap.set("n", "<leader>9", "<cmd>lua require('harpoon.ui').nav_file(9)<cr>
 vim.keymap.set("n", "<leader>bb", "<cmd>Telescope buffers<cr>", { desc = "Telescope" })
 
 vim.keymap.set("i", "kj", "<Esc>")
-vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set("v", "kj", "<Esc>")
 vim.keymap.set("v", "jk", "<Esc>")
 
