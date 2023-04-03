@@ -43,11 +43,6 @@ require("telescope").setup({
     },
 })
 
--- -- GPT
--- vim.keymap.set("n", "<leader>,>", "<cmd><ChatGPTEditWithInstructionsCR>")
--- vim.keymap.set("i", "<leader>,>", "<cmd><ChatGPTEditWithInstructionsCR>")
-
---
 -- TELEKASTEN
 -- -- Launch panel if nothing is typed after <leader>z
 vim.keymap.set("n", "<leader>z", "<cmd>Telekasten panel<CR>")
@@ -81,6 +76,9 @@ vim.keymap.set("n", "<leader>6", "<cmd>lua require('harpoon.ui').nav_file(6)<cr>
 vim.keymap.set("n", "<leader>7", "<cmd>lua require('harpoon.ui').nav_file(7)<cr>", { desc = "Harpoon Buffer 7" })
 vim.keymap.set("n", "<leader>8", "<cmd>lua require('harpoon.ui').nav_file(8)<cr>", { desc = "Harpoon Buffer 8" })
 vim.keymap.set("n", "<leader>9", "<cmd>lua require('harpoon.ui').nav_file(9)<cr>", { desc = "Harpoon Buffer 9" })
+
+vim.keymap.set("n", "<leader>ff", "<cmd>Navbuddy<cr>", { desc = "Navbuddy" })
+vim.keymap.set("i", "<leader>ff", "<cmd>Navbuddy<cr>", { desc = "Navbuddy" })
 
 -- buffer
 vim.keymap.set("n", "<leader>bb", "<cmd>Telescope buffers<cr>", { desc = "Telescope" })

@@ -25,21 +25,52 @@ map <enter> shell
 map x $$f
 map X !$f
 
+map . set hidden!
+
 # dedicated keys for file opener actions
-map o !open !$f
+# map o !open !$f
+map o open
 # map o $(mimeopen %f)
-map O $(mimeopen --ask $f)
+# map O $(mimeopen --ask $f)
 
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
 # use either file extensions and/or mime types here. Below uses an editor for
 # text files and a file opener for the rest.
+# cmd open ${{
+#     case $(file --mime-type $f -b) in
+#         text/*) nvim $fx;;
+#         *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
+#     esac
+# }}
+
+
 cmd open ${{
-    case $(file --mime-type $f -b) in
-        text/*) nvim $fx;;
-        *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
-    esac
+  case $(file --mime-type $f -b) in
+    image/vnd.djvu|application/pdf|application/octet-stream) setsid -f mupdf $fx >/dev/null 2>&1 ;;
+    text/*) $EDITOR $fx;;
+    image/x-xcf|image/svg+xml) setsid -f gimp $f >/dev/null 2>&1 ;;
+    image/*) nsxiv $f | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\)\(_large\)*$" | sxiv -aio 2>/dev/null | lf-select ;;
+    audio/*) mpv --audio-display=no $f ;;
+    video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
+    application/pdf|application/vnd*|application/epub*) setsid -f mupdf $fx >/dev/null 2>&1 ;;
+    *) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
+  esac
 }}
+
+
+cmd mkdir ${{
+	printf "Directory Name: "
+	read ans
+	mkdir $ans
+}}
+
+cmd mkfile ${{
+	printf "File Name: "
+	read ans
+	$EDITOR $ans
+}}
+
 # define a custom 'rename' command without prompt for overwrite
 # cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 # map r push :rename<space>
@@ -96,6 +127,7 @@ cmd zip ${{
     rm -rf $1
 }}
 
+# fuzzy jumping
 cmd Lf ${{
     res="$(find . -maxdepth 1 | fzf-tmux -p --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
     if [ -d "$res" ] ; then
@@ -108,7 +140,6 @@ cmd Lf ${{
     lf -remote "send $id $cmd \"$res\""
 }}
 
-# map <c-f> :fzf_jump
 
 cmd z %{{
     result="$(zoxide query --exclude "${PWD}" -- "$1")"
@@ -133,4 +164,6 @@ map gl ${{clear; git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%C
 
 map E %nvr --remote $fx
 map f $nvim $(fzf)
+map a mkfile
+map A mkdir
 
