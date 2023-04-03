@@ -13,6 +13,8 @@ alias lt='exa --tree --level=2'                                         # tree
 #SSH
 alias ssh="TERM=xterm-256color ssh"
 
+alias :Lf="lfcd"
+
 #vim aliases
 alias vi="nvim"
 alias vim="nvim"

@@ -8,7 +8,8 @@ return {
             home = vim.fn.expand("~/wiki/home"), -- Put the name of your notes directory here
 
             template_new_note = "/Users/arar/wiki/home/templates/newnote.md",
-
+            template_new_daily = "/Users/arar/wiki/home/templates/new_daily.md", -- template for new daily notes
+            template_new_weekly = "/Users/arar/wiki/home/templates/new_weekly.md", -- template for new weekly notes
             follow_creates_nonexisting = true,
 
             -- template_new_note = "~/wiki/", -- template for new notes

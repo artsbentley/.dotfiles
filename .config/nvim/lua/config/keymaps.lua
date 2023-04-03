@@ -42,6 +42,12 @@ require("telescope").setup({
         },
     },
 })
+
+-- -- GPT
+-- vim.keymap.set("n", "<leader>,>", "<cmd><ChatGPTEditWithInstructionsCR>")
+-- vim.keymap.set("i", "<leader>,>", "<cmd><ChatGPTEditWithInstructionsCR>")
+
+--
 -- TELEKASTEN
 -- -- Launch panel if nothing is typed after <leader>z
 vim.keymap.set("n", "<leader>z", "<cmd>Telekasten panel<CR>")

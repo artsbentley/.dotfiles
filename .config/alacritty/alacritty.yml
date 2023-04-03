@@ -77,7 +77,7 @@ key_bindings:
   - { key: E, mods: Command|Shift, chars: "\x02\"" } # split tmux window vertically
   - { key: E, mods: Command, chars: "\x02%" } # split tmux window horizontally
   - { key: F, mods: Command|Shift, chars: "\x02\x5b\x2f" } # start tmux search mode
-  - { key: F, mods: Command, chars: "lfcd\n" } # open file manager 'gokcehan/lf'
+  - { key: F, mods: Command, chars: ":Lf\n" } # open file manager 'gokcehan/lf'
   - { key: G, mods: Command, chars: "\x02g" } # open git manager 'jesseduffield/lazygit'
   - { key: D, mods: Command|Shift, chars: "\x02d" } # open git manager 'jesseduffield/lazygit'
   - { key: A, mods: Command, chars: "\x02t" } # open taskwarrior-tui
