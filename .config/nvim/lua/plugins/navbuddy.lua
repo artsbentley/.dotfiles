@@ -12,7 +12,7 @@ return {
         local actions = require("nvim-navbuddy.actions")
         local navbuddy = require("nvim-navbuddy")
         navbuddy.setup({
-            window = {
+           window = {
                 border = "double",
             },
             mappings = {
