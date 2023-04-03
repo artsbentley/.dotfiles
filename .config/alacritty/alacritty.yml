@@ -73,6 +73,7 @@ key_bindings:
   - { key: F, mods: Command|Shift, chars: "\x02\x5b\x2f" } # start tmux search mode
   - { key: F, mods: Command, chars: "lfcd\n" } # open file manager 'gokcehan/lf'
   - { key: G, mods: Command, chars: "\x02g" } # open git manager 'jesseduffield/lazygit'
+  - { key: D, mods: Command|Shift, chars: "\x02d" } # open git manager 'jesseduffield/lazygit'
   - { key: A, mods: Command, chars: "\x02t" } # open taskwarrior-tui
   - { key: J, mods: Command, chars: "\x02\x54" } # open t - tmux smart session manager
   - { key: K, mods: Command, chars: "\x02s" } # open interactive tmux session client
