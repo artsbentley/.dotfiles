@@ -12,7 +12,7 @@ return {
                 highlight = true, -- Highlight the currently focused node
             },
             keys = {
-                { "<leader>ff", "<cmd>Navbuddy<cr>", desc = "Navbuddy" },
+                -- { "<leader>ff", "<cmd>Navbuddy<cr>", desc = "Navbuddy" },
             },
             window = {
                 border = "single",
