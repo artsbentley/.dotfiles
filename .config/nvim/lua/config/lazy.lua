@@ -8,6 +8,7 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 -- setting custom commands
 vim.cmd([[command! -nargs=0 GoToFile :Telescope find_files hidden=true]])
+vim.cmd([[command! -nargs=0 GoToGitFile :Telescope git_files hidden=true]])
 vim.cmd([[command! -nargs=0 CreateNewNote :Telekasten new_note]])
 vim.cmd([[command! -nargs=0 FindNote :Telekasten find_notes]])
 vim.cmd([[command! -nargs=0 LiveGrepNote :Telescope live_grep cwd=$WIKI_DIR search_dirs={'$WIKI_DIR'}]])

@@ -27,9 +27,12 @@
 - [ ] add nvim split buffer to shortcut, just like current cmd + E
   - [ ] make it that cmd + Z also works on vim buffers in that case
   - [ ] do i want it to always be a new terminal panel? or an actual vim split
+  - [ ] add ctrl shift P -> explore files with either FZF or whole repo instead of cwd
 
 ## nvim
 
+- [ ] create command with shortcut to surround current word with input
+- [ ] when going deeper into the hover documentation, i want the borders to be larger
 - [ ] use harpoon instead instead of buffers, figure out how to delete linked files
 - [ ] script with auto pairings that if the input between the pairing is empty, skips over the end if i return to normal mode in vim
 - [ ] potential use of mini.16 for colorscheming

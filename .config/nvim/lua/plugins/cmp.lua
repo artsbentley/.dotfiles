@@ -25,6 +25,13 @@ return {
                     -- creates the corners of the window
                     documentation = cmp.config.window.bordered(),
                 },
+                -- matching = { -- experimental, see: https://www.reddit.com/r/neovim/comments/12mgt11/cmp_settings_that_most_do_not_know/
+                --     disallow_fuzzy_matching = true,
+                --     disallow_fullfuzzy_matching = true,
+                --     disallow_partial_fuzzy_matching = true,
+                --     disallow_partial_matching = true,
+                --     disallow_prefix_unmatching = false,
+                -- },
                 formatting = {
                     fields = { "kind", "abbr", "menu" },
                     format = function(entry, vim_item)
@@ -63,12 +70,16 @@ return {
                     ["<C-u>"] = cmp.mapping.scroll_docs(-4),
                     ["<C-d>"] = cmp.mapping.scroll_docs(4),
                     ["<C-Space>"] = cmp.mapping.complete(),
-                    ["<Tab>"] = cmp.mapping.confirm({ select = true }),
+                    -- ["<Tab>"] = cmp.mapping.confirm({ select = true }),
                     ["<CR>"] = cmp.config.disable,
                     -- ["<C-p>"] = cmp.mapping.select_prev_item(),
                     -- ["<C-n>"] = cmp.mapping.select_next_item(),
                     ["<Left>"] = cmp.mapping.abort(),
-                    ["<Right>"] = cmp.mapping.confirm(),
+                    ["<Right>"] = cmp.mapping.confirm({
+                        -- fix for correct python indenting after suggestion acceptance
+                        behavior = cmp.ConfirmBehavior.Replace,
+                        select = false,
+                    }),
                 }),
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },

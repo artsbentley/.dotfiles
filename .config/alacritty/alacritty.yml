@@ -20,6 +20,7 @@ font:
   italic:
     family: "SFMono Nerd Font"
     style: Medium italic
+    italic_anti_aliasing: Subpixel
 
   bold:
     family: "SFMono Nerd Font"
@@ -28,6 +29,7 @@ font:
   size: 16.0
   offset:
     x: 0 # For letter spacing.
+    # y: 7 # For line spacing.
     y: 13 # For line spacing.
 
 window:
@@ -73,6 +75,9 @@ key_bindings:
   - { key: Left, mods: Control|Shift, chars: "\x02p" }
   - { key: Right, mods: Control|Shift, chars: "\x02n" }
 
+  # enter terminal interactive/ yank mode
+  - { key: Y, mods: Command, chars: "\x02[" } # split tmux window vertically
+
   - { key: Comma, mods: Command, chars: "\x02," } # rename the current tmux window
   - { key: E, mods: Command|Shift, chars: "\x02\"" } # split tmux window vertically
   - { key: E, mods: Command, chars: "\x02%" } # split tmux window horizontally
@@ -87,8 +92,9 @@ key_bindings:
   - { key: LBracket, mods: Command, chars: "\x0f" } # navigate back (ctrl+o)
   - { key: LBracket, mods: Command|Shift, chars: "\x02p" } # switch to next tmux window
   - { key: O, mods: Command, chars: "\x02u" }
+
   - { key: P, mods: Command, chars: ":GoToFile\n" } # files
-  - { key: P, mods: Command|Shift, chars: ":GoToCommand\n" } # commands
+  - { key: P, mods: Command|Shift, chars: ":GoToGitFile\n" } # view git files
   - { key: N, mods: Command, chars: ":CreateNewNote\n" } # enters neovim and immediatly creates a new telekasten note
   - { key: N, mods: Command|Shift, chars: ":FindNote\n" } # enters neovim and immediatly searches a new telekasten note
   - { key: N, mods: Control, chars: ":LiveGrepNote\n" } # enters neovim and immediatly searches a new telekasten note

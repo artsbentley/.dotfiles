@@ -27,6 +27,7 @@ alias :GoToFile="nvim +GoToFile"
 alias :CreateNewNote="nvim +CreateNewNote"
 alias :FindNote="nvim +FindNote"
 alias :LiveGrepNote="nvim +LiveGrepNote"
+alias :GoToGitFile="nvim +GoToGitFile"
 
 
 alias ..="cd .."

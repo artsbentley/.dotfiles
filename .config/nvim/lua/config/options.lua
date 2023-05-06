@@ -14,12 +14,16 @@ vim.g.loaded_netrwPlugin = 1
 -- colors
 vim.opt.termguicolors = true
 
+-- column width
+-- vim.opt.colorcolumn = "81"
+vim.opt.textwidth = 80
+
 -- leader
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- default position
-vim.opt.scrolloff = 25
+vim.opt.scrolloff = 12
 
 -- ex line
 vim.o.ls = 0
@@ -45,6 +49,7 @@ vim.opt.tabstop = 1
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.smartindent = true
+vim.opt.autoindent = true
 
 -- backup
 -- vim.opt.backup = false
