@@ -6,6 +6,8 @@ function add_to_path() {
 
 add_to_path "$HOME/.dotfiles/.config/bin/"
 add_to_path "/opt/homebrew/bin"
+add_to_path  "$HOME/.config/tmux/plugins/tmuxifier/bin/"
+
 
 export EDITOR=$(which nvim)
 export VISUAL=$(which nvim)

@@ -9,3 +9,7 @@ eval "$(zoxide init zsh)"
 
 [ -d "/opt/homebrew/share/zsh-autosuggestions/" ] && source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh \
                                                   || source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+eval "$(tmuxifier init -)"
+export TMUXIFIER_LAYOUT_PATH="$HOME/.config/tmux/tmux-layouts"
