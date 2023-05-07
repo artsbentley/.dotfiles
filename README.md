@@ -64,6 +64,8 @@ check out this repo for inspiration on colorscheming/ tmux panel sizing and inst
 - [ ] add colored border for zoomed panes
 - [ ] alacritty + zsh shortcuts for VIT, spotify-tui and taskwarrior
 - [ ] add continuum and resurrect
+- [ ] make sure that plugins arent added to git repo, only TPM -> in install
+  script add TPM from a git clone, then update tmux conf
 
 ## keymap
 

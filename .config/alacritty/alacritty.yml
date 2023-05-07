@@ -66,10 +66,10 @@ key_bindings:
   - { key: Space, mods: Control, chars: "\x1b[32;5u" } # NOTE: This is an edge case and might not work.
 
   # tmux window  navigation
-  - { key: Left, mods: Control, chars: "\x02h" }
-  - { key: Right, mods: Control, chars: "\x02l" }
-  - { key: Up, mods: Control, chars: "\x02j" }
-  - { key: Down, mods: Control, chars: "\x02k" }
+  - { key: Left, mods: Control, chars: "\x02\x08" } # prefix + C-h
+  - { key: Right, mods: Control, chars: "\x02\x0C" } # prefix + C-l
+  - { key: Up, mods: Control, chars: "\x02\x0A" } # prefix + C-j
+  - { key: Down, mods: Control, chars: "\x02\x0B" } # prefix + C-k
 
   # tmux pane navigation
   - { key: Left, mods: Control|Shift, chars: "\x02p" }
