@@ -91,7 +91,9 @@ key_bindings:
   - { key: L, mods: Command, chars: "\x02L" } # switch to the last tmux session
   - { key: LBracket, mods: Command, chars: "\x0f" } # navigate back (ctrl+o)
   - { key: LBracket, mods: Command|Shift, chars: "\x02p" } # switch to next tmux window
-  - { key: O, mods: Command, chars: "\x02u" }
+  - { key: U, mods: Command, chars: "\x02u" } #open FZF URL selector
+  - { key: O, mods: Command, chars: "\x0F" } # cursor to previous location in Nvim
+  - { key: I, mods: Command, chars: "\x09" } # cursor to next location in Nvim
 
   - { key: P, mods: Command, chars: ":GoToFile\n" } # files
   - { key: P, mods: Command|Shift, chars: ":GoToGitFile\n" } # view git files
