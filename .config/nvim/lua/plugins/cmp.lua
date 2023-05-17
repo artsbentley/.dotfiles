@@ -13,6 +13,13 @@ return {
 
             local compare = require("cmp.config.compare")
             cmp.setup({
+                enabled = function()
+                    if vim.bo.buftype == "prompt" then
+                        return false
+                    end
+
+                    return true
+                end,
                 window = {
                     completion = {
                         -- winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
