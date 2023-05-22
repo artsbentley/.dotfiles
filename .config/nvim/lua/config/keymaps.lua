@@ -43,6 +43,10 @@ require("telescope").setup({
     },
 })
 
+-- require("oil").setup({
+--     vim.keymap.set("n", "<Leader>E", "<cmd>lua require('oil').open_float()<CR>", { desc = "Open file" }),
+-- })
+
 -- TELEKASTEN
 -- -- Launch panel if nothing is typed after <leader>z
 vim.keymap.set("n", "<leader>z", "<cmd>Telekasten panel<CR>")
