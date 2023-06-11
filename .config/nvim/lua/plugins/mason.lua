@@ -1,12 +1,34 @@
-return     {
-        "williamboman/mason.nvim",
-        opts = {
-            ensure_installed = {
-                "stylua",
-                "shellcheck",
-                "shfmt",
-                "flake8",
-            },
-        },
-    }
-
+return {
+	"williamboman/mason.nvim",
+	opts = {
+		ensure_installed = {
+			"stylua",
+			"shellcheck",
+			"shfmt",
+			"flake8",
+			"gofumpt",
+			"autopep8",
+			"bash-debug-adapter",
+			"black",
+			"bash-language-server",
+			"debugpy",
+			"goimports",
+			"goimports-reviser",
+			"golangci-lint",
+			"golines",
+			"gopls",
+			"html-lsp",
+			"json-lsp",
+			"json-to-struct",
+			"mypy",
+			"prettier",
+			"pydocstyle",
+			"reorder-python-imports",
+			"rust-analyzer",
+			"rustfmt",
+			"shellcheck",
+			"shfmt",
+			"stylua",
+		},
+	},
+}
