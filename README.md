@@ -65,10 +65,12 @@ check out this repo for inspiration on colorscheming/ tmux panel sizing and inst
 - [ ] alacritty + zsh shortcuts for VIT, spotify-tui and taskwarrior
 - [ ] add continuum and resurrect
 - [ ] make sure that plugins arent added to git repo, only TPM -> in install
-  script add TPM from a git clone, then update tmux conf
+      script add TPM from a git clone, then update tmux conf
 
 ## keymap
 
+- [ ] 8+9 combo should be backspace so thumb doesnt need to be raised to make
+      corrections int the num layer
 - [ ] free up the thumb key and place backspace on a homerow combo -[ ] rethink terminal navigation layer for on thumbkey?
 - [ ] fix the certain symbols not working on keeb in vim like ";"
 - [ ] make it that any combination can trigger the navigation mode instead of carefully having to press certain combos first, ie first navigation key and then the right thumb
@@ -79,6 +81,8 @@ check out this repo for inspiration on colorscheming/ tmux panel sizing and inst
 - [ ] in nav mode, replace delete with opt key
 - [ ] combo for C-d an C-u
 - [ ] create harpoon activation for the num layer - combine with alacritty shortcuts
+- [ ] combo maps for both ctrl up and down
+- [ ] harpoon + buffer navigation on the left side of navigation layer
 
 ## Mac
 
