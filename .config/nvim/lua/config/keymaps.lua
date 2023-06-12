@@ -68,6 +68,9 @@ vim.keymap.set("n", "<leader>zv", "<cmd>Telekasten switch_vault<CR>")
 vim.keymap.set("n", "<leader>#", "<cmd>Telekasten show_tags<CR>")
 -- vim.keymap.set("n", "<leader>zy", "<cmd>Telekasten yank_notelink<CR>")
 
+local toggleterm = require("toggleterm")
+toggleterm.setup(vim.keymap.set("n", "<leader>ft", "<cmd>ToggleTerm size=15 persist_mode= true direction=horizontal<CR>"))
+
 -- TMUX NAVIGATOR
 local nvim_tmux_nav = require("nvim-tmux-navigation")
 
@@ -89,6 +92,8 @@ vim.keymap.set("n", "<C-Right>", nvim_tmux_nav.NvimTmuxNavigateRight)
 
 vim.keymap.set("n", "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
 vim.keymap.set("n", "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
+
+--
 
 -- harpoon
 vim.keymap.set("n", "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<cr>", { desc = "Add to Harpoon" })
