@@ -68,8 +68,8 @@ key_bindings:
   # tmux window  navigation
   - { key: Left, mods: Control, chars: "\x02\x08" } # prefix + C-h
   - { key: Right, mods: Control, chars: "\x02\x0C" } # prefix + C-l
-  - { key: Up, mods: Control, chars: "\x02\x0A" } # prefix + C-j
-  - { key: Down, mods: Control, chars: "\x02\x0B" } # prefix + C-k
+  - { key: Down, mods: Control, chars: "\x02\x0A" } # prefix + C-j
+  - { key: Up, mods: Control, chars: "\x02\x0B" } # prefix + C-k
 
   # tmux pane navigation
   - { key: Left, mods: Control|Shift, chars: "\x02p" }
@@ -92,14 +92,17 @@ key_bindings:
   - { key: LBracket, mods: Command, chars: "\x0f" } # navigate back (ctrl+o)
   - { key: LBracket, mods: Command|Shift, chars: "\x02p" } # switch to next tmux window
   - { key: U, mods: Command, chars: "\x02u" } #open FZF URL selector
-  - { key: O, mods: Command, chars: "\x0F" } # cursor to previous location in Nvim
-  - { key: I, mods: Command, chars: "\x09" } # cursor to next location in Nvim
+  - { key: I, mods: Command, chars: "\x0F" } # cursor to previous location in Nvim
+  - { key: I, mods: Command|Shift, chars: "\x09" } # cursor to next location in Nvim
 
   - { key: P, mods: Command, chars: ":GoToFile\n" } # files
   - { key: P, mods: Command|Shift, chars: ":GoToGitFile\n" } # view git files
   - { key: N, mods: Command, chars: ":CreateNewNote\n" } # enters neovim and immediatly creates a new telekasten note
   - { key: N, mods: Command|Shift, chars: ":FindNote\n" } # enters neovim and immediatly searches a new telekasten note
   - { key: N, mods: Control, chars: ":LiveGrepNote\n" } # enters neovim and immediatly searches a new telekasten note
+  - { key: O, mods: Command, chars: ":OpenOilCwd\n" } # files
+  - { key: O, mods: Command|Shift, chars: ":OpenOilProjectDir\n" } # files
+
   # - { key: Period, mods: Command, chars: "\x1b\x20\x2e\x0a" } (causes popup to be unfocused)
   - { key: Q, mods: Command, chars: ":q\n" } # quit vim
   - { key: R, mods: Command, chars: "\x1b\x5b\x41\x0a" }

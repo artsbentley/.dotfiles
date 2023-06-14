@@ -44,13 +44,13 @@ return {
             -- Set to `false` to remove a keymap
             -- See :help oil-actions for a list of all available actions
             keymaps = {
-                ["g?"] = "actions.show_help",
+                ["?"] = "actions.show_help",
                 ["<CR>"] = "actions.select",
                 ["<Right>"] = "actions.select",
                 ["|"] = "actions.select_vsplit",
                 ["-"] = "actions.select_split",
                 ["<C-t>"] = "actions.select_tab",
-                ["<C-p>"] = "actions.preview",
+                ["p"] = "actions.preview",
                 ["q"] = "actions.close",
                 ["<C-l>"] = false,
                 ["<Bs>"] = "actions.parent",

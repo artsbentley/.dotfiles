@@ -28,6 +28,7 @@ alias :CreateNewNote="nvim +CreateNewNote"
 alias :FindNote="nvim +FindNote"
 alias :LiveGrepNote="nvim +LiveGrepNote"
 alias :GoToGitFile="nvim +GoToGitFile"
+alias :OpenOilCwd="nvim +OpenOilCwd"
 
 
 alias ..="cd .."
