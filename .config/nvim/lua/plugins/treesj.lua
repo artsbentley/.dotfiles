@@ -1,10 +1,9 @@
 return {
-    "Wansmer/treesj",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    "echasnovski/mini.splitjoin",
     config = function()
-        require("treesj").setup({--[[ your config ]]
-            use_default_keymaps = false,
-            vim.keymap.set("n", "<leader>m", require("treesj").toggle),
+        require("mini.splitjoin").setup({--[[ your config ]]
+            -- use_default_keymaps = false,
+            mappings = { toggle = "<leader>m", split = "", join = "" },
         })
     end,
 }
