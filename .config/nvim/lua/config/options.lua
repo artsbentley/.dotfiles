@@ -40,7 +40,7 @@ vim.opt.ignorecase = true -- Ignore case when searching
 
 -- Gutter
 vim.opt.number = true -- Show line numbers
-vim.opt.relativenumber = false -- Show relative line numbers
+vim.opt.relativenumber = true -- Show relative line numbers
 vim.opt.cursorline = true -- Enable highlighting of the current line
 
 -- Set up indentation options
