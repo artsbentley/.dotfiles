@@ -124,3 +124,6 @@ vim.keymap.set("n", "U", "<C-r>")
 -- http://ddrscott.github.io/blog/2016/yank-without-jank/
 vim.keymap.set("v", "y", "myy`hay")
 vim.keymap.set("v", "Y", "myY`y")
+
+-- clipboard
+vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank to clipboard" })

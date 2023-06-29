@@ -68,3 +68,6 @@ vim.opt.isfname:append("@-@") -- Allow filenames with special characters
 vim.opt.signcolumn = "yes" -- Always show the sign column
 vim.opt.updatetime = 50 -- Set the time interval for writing swap files and updating changes
 vim.opt.wrap = false -- Disable line wrapping
+
+-- clipboard
+vim.opt.clipboard = ""
