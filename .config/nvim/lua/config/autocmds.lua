@@ -17,6 +17,13 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     command = "!brew services restart skhd",
 })
 
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufFilePre", "BufRead" }, {
+    pattern = { "*.mdx", "*.md" },
+    callback = function()
+        vim.cmd([[set filetype=markdown wrap linebreak nolist nospell]])
+    end,
+})
+
 -- script to close all buffers that havent been "touched" source: https://www.reddit.com/r/neovim/comments/12c4ad8/closing_unused_buffers/
 local id = vim.api.nvim_create_augroup("startup", {
     clear = false,

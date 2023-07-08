@@ -1,6 +1,6 @@
 return {
     "akinsho/toggleterm.nvim",
-    opts = {
+    optt = {
         direction = "horizontal",
         persist_mode = true,
     },
