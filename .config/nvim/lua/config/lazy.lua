@@ -6,13 +6,27 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
--- setting custom commands
+-- CUSTOM COMMANDS
+--telescope
 vim.cmd([[command! -nargs=0 GoToFile :Telescope find_files hidden=true]])
 vim.cmd([[command! -nargs=0 GoToGitFile :Telescope git_files hidden=true]])
+vim.cmd([[command! -nargs=0 TelescopeBuffers :lua require("telescope.builtin").buffers({ layout_strategy='vertical', layout_config={width=0.3, height=0.8}, sort_lastused = true })]])
+
+--  Telekasten
 vim.cmd([[command! -nargs=0 CreateNewNote :Telekasten new_note]])
 vim.cmd([[command! -nargs=0 FindNote :Telekasten find_notes]])
 vim.cmd([[command! -nargs=0 LiveGrepNote :Telescope live_grep cwd=$WIKI_DIR search_dirs={'$WIKI_DIR'}]])
+
 vim.cmd([[command! -nargs=0 OpenOilCwd :Oil --float]])
+
+-- harpoon
+vim.cmd([[command! -nargs=0 HarpoonNav1 :lua require("harpoon.ui").nav_file(1)]])
+vim.cmd([[command! -nargs=0 HarpoonNav2 :lua require("harpoon.ui").nav_file(2)]])
+vim.cmd([[command! -nargs=0 HarpoonNav3 :lua require("harpoon.ui").nav_file(3)]])
+vim.cmd([[command! -nargs=0 HarpoonNav4 :lua require("harpoon.ui").nav_file(4)]])
+vim.cmd([[command! -nargs=0 HarpoonAddFile :lua require("harpoon.mark").add_file()]])
+vim.cmd([[command! -nargs=0 HarpoonShowMenu :lua require("harpoon.ui").toggle_quick_menu()]])
+-- :lua require('telescope.builtin').find_files({layout_strategy='vertical',layout_config={width=0.5}})
 -- vim.cmd([[command! -nargs=0 OpenOilProjectDir :Oil ]])
 
 require("lazy").setup({
@@ -21,6 +35,7 @@ require("lazy").setup({
         { "LazyVim/LazyVim", import = "lazyvim.plugins" },
         -- import any extras modules here
         -- { import = "lazyvim.plugins.extras.lang.typescript" },
+        { import = "lazyvim.plugins.extras.editor.flash" },
         { import = "lazyvim.plugins.extras.lang.go" },
         { import = "lazyvim.plugins.extras.dap.core" },
         { import = "lazyvim.plugins.extras.lang.json" },
@@ -37,7 +52,7 @@ require("lazy").setup({
         version = false, -- always use the latest git commit
         -- version = "*", -- try installing the latest stable version for plugins that support semver
     },
-    install = { colorscheme = { "tokyonight", "habamax" } },
+    -- install = { colorscheme = { "tokyonight", "habamax" } },
     checker = { enabled = true }, -- automatically check for plugin updates
     performance = {
         rtp = {
