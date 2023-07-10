@@ -1,5 +1,6 @@
 return {
     "echasnovski/mini.files",
+    event = "VeryLazy",
     opts = {
         windows = {
             preview = false,
@@ -13,6 +14,7 @@ return {
             -- Disabled by default in LazyVim because neo-tree is used for that
             use_as_default_explorer = false,
         },
+
         mappings = {
             close = "q",
             go_in = "l",
@@ -28,14 +30,14 @@ return {
     },
     keys = {
         {
-            "<leader>fm",
+            "<leader>ff",
             function()
                 require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
             end,
             desc = "Open mini.files (directory of current file)",
         },
         {
-            "<leader>fM",
+            "<leader>fF",
             function()
                 require("mini.files").open(vim.loop.cwd(), true)
             end,
@@ -67,5 +69,39 @@ return {
                 vim.keymap.set("n", "g.", toggle_dotfiles, { buffer = buf_id })
             end,
         })
+
+        -- additional mappings
+        local go_in_plus = function()
+            for _ = 1, vim.v.count1 - 1 do
+                MiniFiles.go_in()
+            end
+            local fs_entry = MiniFiles.get_fs_entry()
+            local is_at_file = fs_entry ~= nil and fs_entry.fs_type == "file"
+            MiniFiles.go_in()
+            if is_at_file then
+                MiniFiles.close()
+            end
+        end
+
+        vim.api.nvim_create_autocmd("User", {
+            pattern = "MiniFilesBufferCreate",
+            callback = function(args)
+                local map_buf = function(lhs, rhs)
+                    vim.keymap.set("n", lhs, rhs, { buffer = args.data.buf_id })
+                end
+
+                map_buf("<CR>", go_in_plus)
+                map_buf("<Right>", go_in_plus)
+
+                map_buf("<BS>", MiniFiles.go_out)
+                map_buf("<Left>", MiniFiles.go_out)
+
+                map_buf("<Right>", MiniFiles.go_in)
+
+                map_buf("<Esc>", MiniFiles.close)
+                map_buf("<C-s>", MiniFiles.synchronize)
+            end,
+        })
+        -- Add extra mappings from *MiniFiles-examples*
     end,
 }
