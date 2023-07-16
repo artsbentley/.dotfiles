@@ -99,6 +99,7 @@ return {
                 map_buf("<Right>", MiniFiles.go_in)
 
                 map_buf("<Esc>", MiniFiles.close)
+                map_buf("<leader>e", MiniFiles.close)
                 map_buf("<C-s>", MiniFiles.synchronize)
             end,
         })

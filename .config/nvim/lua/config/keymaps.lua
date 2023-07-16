@@ -71,6 +71,10 @@ vim.keymap.set("n", "<leader>#", "<cmd>Telekasten show_tags<CR>")
 local toggleterm = require("toggleterm")
 toggleterm.setup(vim.keymap.set("n", "<leader>ft", "<cmd>ToggleTerm size=15 persist_mode= true direction=horizontal<CR>"))
 
+-- REMAP C-D and C-U to scroll only n lines at a time
+vim.keymap.set("n", "<C-d>", "15<C-d>zz")
+vim.keymap.set("n", "<C-u>", "15<C-u>zz")
+
 -- TMUX NAVIGATOR
 local nvim_tmux_nav = require("nvim-tmux-navigation")
 
@@ -80,41 +84,55 @@ nvim_tmux_nav.setup({
 
 vim.keymap.set("n", "<C-Left>", nvim_tmux_nav.NvimTmuxNavigateLeft)
 vim.keymap.set("n", "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft)
+vim.keymap.set("i", "<C-Left>", nvim_tmux_nav.NvimTmuxNavigateLeft)
+vim.keymap.set("i", "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft)
 
 vim.keymap.set("n", "<C-Down>", nvim_tmux_nav.NvimTmuxNavigateDown)
 vim.keymap.set("n", "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown)
+vim.keymap.set("i", "<C-Down>", nvim_tmux_nav.NvimTmuxNavigateDown)
+vim.keymap.set("i", "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown)
 
 vim.keymap.set("n", "<C-Up>", nvim_tmux_nav.NvimTmuxNavigateUp)
 vim.keymap.set("n", "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp)
+vim.keymap.set("i", "<C-Up>", nvim_tmux_nav.NvimTmuxNavigateUp)
+vim.keymap.set("i", "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp)
 
 vim.keymap.set("n", "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
 vim.keymap.set("n", "<C-Right>", nvim_tmux_nav.NvimTmuxNavigateRight)
+vim.keymap.set("i", "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
+vim.keymap.set("i", "<C-Right>", nvim_tmux_nav.NvimTmuxNavigateRight)
 
 vim.keymap.set("n", "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
 vim.keymap.set("n", "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
+vim.keymap.set("i", "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
+vim.keymap.set("i", "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
 
 -- harpoon
 vim.keymap.set("n", "<leader>a", "<cmd>HarpoonAddFile<cr>", { desc = "Add to Harpoon" })
 vim.keymap.set("n", "<leader>A", "<cmd>HarpoonShowMenu<cr>", { desc = "Show Harpoon" })
--- vim.keymap.set("n", "<f1>", function()
---     require("harpoon.ui").nav_file(1)
--- end, { desc = "Harpoon Buffer 1" })
--- vim.keymap.set("n", "<f2>", function()
---     require("harpoon.ui").nav_file(2)
--- end, { desc = "Harpoon Buffer 2" })
-vim.keymap.set("n", "<f1>", "<cmd>HarpoonNav1<cr>", { desc = "Harpoon Buffer 1" })
-vim.keymap.set("n", "<f2>", "<cmd>HarpoonNav2<cr>", { desc = "Harpoon Buffer 2" })
-vim.keymap.set("n", "<f3>", "<cmd>HarpoonNav3<cr>", { desc = "Harpoon Buffer 3" })
-vim.keymap.set("n", "<f4>", "<cmd>HarpoonNav4<cr>", { desc = "Harpoon Buffer 4" })
 
--- vim.keymap.set("n", "<leader>ff", "<cmd>Navbuddy<cr>", { desc = "Navbuddy" })
+vim.keymap.set("n", "<f1>", "<cmd>HarpoonNav1<cr>", { desc = "Harpoon Buffer 1" })
+vim.keymap.set("i", "<f1>", "<cmd>HarpoonNav1<cr>", { desc = "Harpoon Buffer 1" })
+vim.keymap.set("n", "<f2>", "<cmd>HarpoonNav2<cr>", { desc = "Harpoon Buffer 2" })
+vim.keymap.set("i", "<f2>", "<cmd>HarpoonNav2<cr>", { desc = "Harpoon Buffer 2" })
+vim.keymap.set("n", "<f3>", "<cmd>HarpoonNav3<cr>", { desc = "Harpoon Buffer 3" })
+vim.keymap.set("i", "<f3>", "<cmd>HarpoonNav3<cr>", { desc = "Harpoon Buffer 3" })
+vim.keymap.set("n", "<f4>", "<cmd>HarpoonNav4<cr>", { desc = "Harpoon Buffer 4" })
+vim.keymap.set("i", "<f4>", "<cmd>HarpoonNav4<cr>", { desc = "Harpoon Buffer 4" })
+vim.keymap.set("n", "<f5>", "<cmd>HarpoonNav5<cr>", { desc = "Harpoon Buffer 5" })
+vim.keymap.set("i", "<f5>", "<cmd>HarpoonNav5<cr>", { desc = "Harpoon Buffer 5" })
+
+--  MINI FILES NEOTREE OVERWRITE
+vim.keymap.set("n", "<leader>e", function()
+    require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
+end, { desc = "Open mini.files (directory of current file)" })
+
+vim.keymap.set("n", "<leader>E", function()
+    require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
+end, { desc = "Open mini.files (directory of current file)" })
 
 -- buffer
 vim.keymap.set("n", "<leader>bb", "<cmd>Telescope buffers<cr>", { desc = "Telescope" })
-
-vim.keymap.set("i", "kj", "<Esc>")
-vim.keymap.set("v", "kj", "<Esc>")
-vim.keymap.set("v", "jk", "<Esc>")
 
 -- redo
 vim.keymap.set("n", "U", "<C-r>")
