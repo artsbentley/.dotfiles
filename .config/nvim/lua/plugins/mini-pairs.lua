@@ -3,7 +3,7 @@ return {
     opts = {
         mappings = {
             ["'"] = false,
-            ['"'] = false,
+            -- ['"'] = false,
         },
     },
 }
