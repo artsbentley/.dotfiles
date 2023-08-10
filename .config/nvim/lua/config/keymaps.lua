@@ -12,7 +12,6 @@ local function toggle_diagnostics()
         vim.diagnostic.config({ virtual_text = { spacing = 4, prefix = "●" } })
     end
 end
-
 vim.keymap.set("n", "<Leader>ui", toggle_diagnostics, { desc = "Toggle [i]nline diagnostic type" })
 
 -- TELESCOPE
