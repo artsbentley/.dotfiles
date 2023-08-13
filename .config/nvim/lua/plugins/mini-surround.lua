@@ -3,7 +3,7 @@ return {
     opts = {
         mappings = {
             -- add = "gsa",
-            add = "<Enter>",
+            add = "<S-Enter>",
             delete = "<Backspace>",
             find = "gsf",
             find_left = "gsF",

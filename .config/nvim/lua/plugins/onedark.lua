@@ -41,7 +41,15 @@ return {
             background = true, -- use background color for virtual text
         },
     },
+    -- Configure LazyVim to load onedark
+    {
+        "LazyVim/LazyVim",
+        opts = {
+            colorscheme = "onedark",
+        },
+    },
 }
+
 --     config = function()
 --         require("ondark").setup({
 --             -- Main options --
