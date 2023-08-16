@@ -13,7 +13,7 @@ return {
             keymaps = {
                 init_selection = "<CR>",
                 node_incremental = "<CR>",
-                node_decremental = "<S-Backspace>",
+                -- node_decremental = "<S-BS>",
             },
         })
     end,

@@ -4,7 +4,7 @@ return {
         mappings = {
             -- add = "gsa",
             add = "<S-Enter>",
-            delete = "<Backspace>",
+            -- delete = "<S-BS>",
             find = "gsf",
             find_left = "gsF",
             highlight = "gsh",

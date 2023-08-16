@@ -131,9 +131,11 @@ vim.keymap.set("n", "<leader>E", function()
 end, { desc = "Open mini.files (directory of current file)" })
 
 -- spider
-vim.keymap.set({ "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" })
-vim.keymap.set({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" })
-vim.keymap.set({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
+-- vim.keymap.set({ "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" })
+-- vim.keymap.set({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-w" })
+vim.keymap.set({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" })
+vim.keymap.set({ "n", "o", "x" }, "<S-e>", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
+-- vim.keymap.set({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
 vim.keymap.set({ "n", "o", "x" }, "ge", "<cmd>lua require('spider').motion('ge')<CR>", { desc = "Spider-ge" })
 
 -- buffer
@@ -141,6 +143,10 @@ vim.keymap.set("n", "<leader>bb", "<cmd>Telescope buffers<cr>", { desc = "Telesc
 
 -- redo
 vim.keymap.set("n", "U", "<C-r>")
+
+-- CIW easy
+vim.keymap.set("n", "<BS>", "ciw")
+vim.keymap.set("v", "<BS>", "ciw")
 
 -- Maintain the cursor position when yanking a visual selection
 -- http://ddrscott.github.io/blog/2016/yank-without-jank/

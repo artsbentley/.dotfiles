@@ -1,7 +1,7 @@
-return {}
--- return {
---     "LazyVim/LazyVim",
---     opts = {
---         colorscheme = "onedark",
---     },
--- }
+-- return {}
+return {
+    "LazyVim/LazyVim",
+    opts = {
+        colorscheme = "onedark",
+    },
+}

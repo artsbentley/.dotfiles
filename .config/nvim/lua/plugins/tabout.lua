@@ -1,6 +1,7 @@
 -- Lua
 return {
     "abecodes/tabout.nvim",
+    dependencies = "nvim-treesitter/nvim-treesitter",
     config = function()
         require("tabout").setup({
             tabkey = "<Tab>", -- key to trigger tabout, set to an empty string to disable
