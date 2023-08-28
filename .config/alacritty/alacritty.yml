@@ -42,7 +42,7 @@ window:
 
 import:
   # - ~/.config/alacritty/catppuccin-mocha.yml
-  - ~/.config/alacritty/tokyonight-night.yml
+  - ~/.config/alacritty/gruvbox-material.yml
 
 # NOTE: helpful hex codes
 # \x1b = escape (useful for vim-related keybindings)
