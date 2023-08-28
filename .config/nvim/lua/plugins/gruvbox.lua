@@ -2,7 +2,8 @@
 return {
     -- add gruvbox
     { "sainnhe/gruvbox-material" },
-    -- priority = 1000,
+    -- { "eddyekofo94/gruvbox-flat.nvim" },
+    priority = 1000,
     -- config = function()
     -- require("gruvbox").setup({
     --     palette_overrides = {
@@ -11,11 +12,10 @@ return {
     -- })
     -- end,
 
-    -- Configure LazyVim to load gruvbox
-    -- {
-    --     "LazyVim/LazyVim",
-    --     opts = {
-    --         colorscheme = "gruvbox",
-    --     },
-    -- },
+    {
+        "LazyVim/LazyVim",
+        opts = {
+            vim.cmd([[let g:gruvbox_material_enable_bold=1]]),
+        },
+    },
 }
