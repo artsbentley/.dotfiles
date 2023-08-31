@@ -78,6 +78,11 @@ key_bindings:
   - { key: Down, mods: Control, chars: "\x02\x0A" } # prefix + C-j
   - { key: Up, mods: Control, chars: "\x02\x0B" } # prefix + C-k
 
+  - { key: Left, mods: Shift, chars: "\x02\x08" } # prefix + C-h
+  - { key: Right, mods: Shift, chars: "\x02\x0C" } # prefix + C-l
+  - { key: Down, mods: Shift, chars: "\x02\x0A" } # prefix + C-j
+  - { key: Up, mods: Shift, chars: "\x02\x0B" } # prefix + C-k
+
   # tmux pane navigation
   - { key: Left, mods: Control|Shift, chars: "\x02p" }
   - { key: Right, mods: Control|Shift, chars: "\x02n" }
