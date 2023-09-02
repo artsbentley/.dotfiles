@@ -11,6 +11,16 @@ return {
                 },
             })
 
+            -- dadbod cmp for items in db not fully working yet
+            -- local autocomplete_group = vim.api.nvim_create_augroup("vimrc_autocompletion", { clear = true })
+            -- vim.api.nvim_create_autocmd("FileType", {
+            --     pattern = { "sql", "mysql", "plsql" },
+            --     callback = function()
+            --         cmp.setup.buffer({ sources = { { name = "vim-dadbod-completion" } } })
+            --     end,
+            --     group = autocomplete_group,
+            -- })
+
             local compare = require("cmp.config.compare")
             cmp.setup({
                 enabled = function()
@@ -59,6 +69,8 @@ return {
                                 git = "[Git]",
                                 conventionalcommits = "[Conv]",
                                 calc = "[Calc]",
+                                -- dadbod not fully working yet
+                                -- ["vim-dadbod-completion"] = "[DB]",
                             },
                         })(entry, vim_item)
                         local strings = vim.split(kind.kind, "%s", { trimempty = true })
