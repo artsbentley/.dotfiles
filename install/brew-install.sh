@@ -18,6 +18,7 @@ brew install ninja libtool automake cmake pkg-config gettext curl
 brew install neovim
 # github cli
 brew install gh
+brew install yq
 brew install starship
 brew install alfred
 brew install zsh-autosuggestions

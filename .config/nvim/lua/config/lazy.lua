@@ -24,6 +24,7 @@ vim.cmd([[command! -nargs=0 HarpoonNav1 :lua require("harpoon.ui").nav_file(1)]]
 vim.cmd([[command! -nargs=0 HarpoonNav2 :lua require("harpoon.ui").nav_file(2)]])
 vim.cmd([[command! -nargs=0 HarpoonNav3 :lua require("harpoon.ui").nav_file(3)]])
 vim.cmd([[command! -nargs=0 HarpoonNav4 :lua require("harpoon.ui").nav_file(4)]])
+vim.cmd([[command! -nargs=0 HarpoonNav5 :lua require("harpoon.ui").nav_file(5)]])
 vim.cmd([[command! -nargs=0 HarpoonAddFile :lua require("harpoon.mark").add_file()]])
 vim.cmd([[command! -nargs=0 HarpoonShowMenu :lua require("harpoon.ui").toggle_quick_menu()]])
 -- :lua require('telescope.builtin').find_files({layout_strategy='vertical',layout_config={width=0.5}})
