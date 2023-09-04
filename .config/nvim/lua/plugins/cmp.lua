@@ -140,14 +140,14 @@ return {
                     { name = "luasnip" },
                 }),
             })
-            cmp.setup.cmdline(":", {
-                confirmation = { completeopt = "menu,menuone,noinsert" },
-                sources = cmp.config.sources({
-                    { name = "cmdline" },
-                    { name = "cmdline_history" },
-                    { name = "path" },
-                }),
-            })
+            -- cmp.setup.cmdline(":", {
+            --     confirmation = { completeopt = "menu,menuone,noinsert" },
+            --     sources = cmp.config.sources({
+            --         { name = "cmdline" },
+            --         { name = "cmdline_history" },
+            --         { name = "path" },
+            --     }),
+            -- })
             cmp.setup.cmdline("/", {
                 sources = {
                     { name = "buffer" },
