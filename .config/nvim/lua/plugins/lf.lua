@@ -6,8 +6,8 @@ return {
         winblend = 0,
         highlights = { NormalFloat = { guibg = "NONE" } },
         border = "double", -- border kind: single double shadow curved
-        height = 0.70,
-        width = 0.85,
+        -- height = 100,
+        -- width = 100,
         escape_quit = true,
     },
     -- keys = {

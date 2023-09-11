@@ -68,7 +68,7 @@ vim.keymap.set("n", "<leader>#", "<cmd>Telekasten show_tags<CR>")
 -- vim.keymap.set("n", "<leader>zy", "<cmd>Telekasten yank_notelink<CR>")
 
 local toggleterm = require("toggleterm")
-toggleterm.setup(vim.keymap.set("n", "<leader>ft", "<cmd>ToggleTerm size=15 persist_mode= true direction=horizontal<CR>"))
+toggleterm.setup(vim.keymap.set("n", "<S-l>", "<cmd>ToggleTerm size=15 persist_mode= true direction=horizontal<CR>"))
 
 -- REMAP C-D and C-U to scroll only n lines at a time
 vim.keymap.set("n", "<C-d>", "15<C-d>zz")
@@ -137,6 +137,9 @@ vim.keymap.set({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('w')<C
 vim.keymap.set({ "n", "o", "x" }, "<S-e>", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
 -- vim.keymap.set({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
 vim.keymap.set({ "n", "o", "x" }, "ge", "<cmd>lua require('spider').motion('ge')<CR>", { desc = "Spider-ge" })
+
+-- window split
+vim.keymap.set("n", "<leader>we", "<cmd>vsplit<CR>", { desc = "Split window" })
 
 -- buffer
 vim.keymap.set("n", "<leader>bb", "<cmd>Telescope buffers<cr>", { desc = "Telescope" })
