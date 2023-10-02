@@ -70,6 +70,9 @@ vim.keymap.set("n", "<leader>#", "<cmd>Telekasten show_tags<CR>")
 local toggleterm = require("toggleterm")
 toggleterm.setup(vim.keymap.set("n", "<S-l>", "<cmd>ToggleTerm size=15 persist_mode= true direction=horizontal<CR>"))
 
+local trouble = require("trouble")
+trouble.setup(vim.keymap.set("n", "<S-x>", "<cmd>TroubleToggle document_diagnostics<cr>"))
+
 -- REMAP C-D and C-U to scroll only n lines at a time
 vim.keymap.set("n", "<C-d>", "15<C-d>zz")
 vim.keymap.set("n", "<C-u>", "15<C-u>zz")
