@@ -94,7 +94,7 @@ key_bindings:
   - { key: E, mods: Command|Shift, chars: "\x02\"" } # split tmux window horizontally
   - { key: E, mods: Command, chars: "\x02%" } # split tmux window vertically
   - { key: F, mods: Command|Shift, chars: "\x02\x5b\x2f" } # start tmux search mode
-  - { key: F, mods: Command, chars: ":Lf\n" } # open file manager 'gokcehan/lf'
+  - { key: F, mods: Command, chars: ":Yazi\n" } # open file manager 'gokcehan/lf'
   - { key: G, mods: Command, chars: "\x02g" } # open git manager 'jesseduffield/lazygit'
   - { key: D, mods: Command|Shift, chars: "\x02d" } # open docker manager
   - { key: A, mods: Command, chars: "\x02t" } # open taskwarrior-tui
