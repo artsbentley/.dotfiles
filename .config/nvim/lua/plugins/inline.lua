@@ -28,6 +28,7 @@ local function get_git_diff(props)
     end
     return labels
 end
+--
 
 return {
     "b0o/incline.nvim",
