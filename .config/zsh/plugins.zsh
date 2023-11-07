@@ -13,3 +13,4 @@ eval "$(zoxide init zsh)"
 
 eval "$(tmuxifier init -)"
 export TMUXIFIER_LAYOUT_PATH="$HOME/.config/tmux/tmux-layouts"
+export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
