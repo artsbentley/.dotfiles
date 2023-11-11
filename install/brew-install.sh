@@ -48,9 +48,14 @@ brew install fzf
 brew install alacritty
 brew install rustup
 brew install bat
-brew install taskwarrior-tui
 brew install spotify-tui
 brew install just
+# python poetry install with pipx, poetry isnt supposed to be installed with
+# brew
+brew install pipx
+pipx ensurepath
+pipx install poetry
+brew install direnv
 
 #brew install svim --gives vim commands to mac input fields
 
@@ -128,8 +133,6 @@ brew services start skhd
 brew services start yabai
 brew services start sketchybar
 #brew services start svim
-
-
 
 
 echo "Installation complete...."

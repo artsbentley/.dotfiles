@@ -16,9 +16,20 @@ export WIKI_DIR="$HOME/wiki/home"
 #enable vi mode
 bindkey -v
 
+# enable reverse search
+
+
+
+
 #load seperated config files
 for conf in "$HOME/.config/zsh/"*.zsh; do
   source "${conf}"
 done
 unset conf
 
+
+# Created by `pipx` on 2023-11-09 12:30:15
+export PATH="$PATH:/Users/arar/.local/bin"
+
+# direnv
+eval "$(direnv hook zsh)"
