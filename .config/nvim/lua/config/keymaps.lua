@@ -74,8 +74,8 @@ local trouble = require("trouble")
 trouble.setup(vim.keymap.set("n", "<S-x>", "<cmd>TroubleToggle document_diagnostics<cr>"))
 
 -- REMAP C-D and C-U to scroll only n lines at a time
-vim.keymap.set("n", "<C-d>", "15<C-d>zz")
-vim.keymap.set("n", "<C-u>", "15<C-u>zz")
+-- vim.keymap.set("n", "<C-d>", "15<C-d>zz")
+-- vim.keymap.set("n", "<C-u>", "15<C-u>zz")
 
 -- TMUX NAVIGATOR
 local nvim_tmux_nav = require("nvim-tmux-navigation")
@@ -123,6 +123,9 @@ vim.keymap.set("n", "<f4>", "<cmd>HarpoonNav4<cr>", { desc = "Harpoon Buffer 4" 
 vim.keymap.set("i", "<f4>", "<cmd>HarpoonNav4<cr>", { desc = "Harpoon Buffer 4" })
 vim.keymap.set("n", "<f5>", "<cmd>HarpoonNav5<cr>", { desc = "Harpoon Buffer 5" })
 vim.keymap.set("i", "<f5>", "<cmd>HarpoonNav5<cr>", { desc = "Harpoon Buffer 5" })
+
+-- LSP RESTART
+vim.keymap.set("n", "<leader>cc", "<cmd>LspStart<CR>", { desc = "Start LSP" })
 
 --  MINI FILES NEOTREE OVERWRITE
 vim.keymap.set("n", "<leader>e", function()
