@@ -13,4 +13,7 @@ eval "$(zoxide init zsh)"
 
 eval "$(tmuxifier init -)"
 export TMUXIFIER_LAYOUT_PATH="$HOME/.config/tmux/tmux-layouts"
+
+# tmux session manager
 export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
+export T_SESSION_USE_GIT_ROOT="true"

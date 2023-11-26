@@ -38,7 +38,7 @@ return {
         symbol_blacklist = {},
         symbols = {
             File = { icon = "", hl = "@text.uri" },
-            Module = { icon = "", hl = "@namespace" },
+            Module = { icon = " Mod", hl = "@namespace" },
             Namespace = { icon = "", hl = "@namespace" },
             Package = { icon = "", hl = "@namespace" },
             Class = { icon = "⦿ Class", hl = "@type" },

@@ -40,7 +40,9 @@ alias ......="cd ../../../../.."
 alias c="clear"
 alias home="cd ~"
 
+# HANDY TOOLS
 alias echopath="echo $PATH | tr ':' '\n'"
+alias cargodep="cargo tree --all-features --target=all | fgrep -- -sys"
 
 # not working
 # alias addbinpath="export PATH=$PATH:$(pwd)"
