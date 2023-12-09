@@ -9,7 +9,7 @@ return {
                 null_ls.builtins.code_actions.cspell,
                 null_ls.builtins.code_actions.eslint,
                 null_ls.builtins.code_actions.refactoring,
-                null_ls.builtins.diagnostics.cspell,
+                -- null_ls.builtins.diagnostics.cspell,
                 null_ls.builtins.diagnostics.eslint,
                 null_ls.builtins.diagnostics.fish,
                 null_ls.builtins.diagnostics.flake8,
@@ -21,6 +21,12 @@ return {
                 null_ls.builtins.formatting.shfmt,
                 null_ls.builtins.formatting.stylua,
                 null_ls.builtins.code_actions.gitsigns,
+                null_ls.builtins.diagnostics.golangci_lint,
+                -- null_ls.builtins.diagnostics.golangci-lint_langserver,
+                null_ls.builtins.code_actions.gomodifytags,
+                null_ls.builtins.code_actions.impl,
+                null_ls.builtins.formatting.goimports,
+                null_ls.builtins.formatting.gofumpt,
 
                 null_ls.builtins.diagnostics.selene.with({
                     condition = function(utils)

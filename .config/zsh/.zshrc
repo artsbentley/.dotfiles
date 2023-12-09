@@ -6,7 +6,8 @@ function add_to_path() {
 
 add_to_path "$HOME/.dotfiles/.config/bin/"
 add_to_path "/opt/homebrew/bin"
-add_to_path  "$HOME/.config/tmux/plugins/tmuxifier/bin/"
+add_to_path "$HOME/.config/tmux/plugins/tmuxifier/bin/"
+add_to_path "$HOME/nix/var/nix/profiles/default/bin"
 
 
 export EDITOR=$(which nvim)
@@ -27,6 +28,16 @@ for conf in "$HOME/.config/zsh/"*.zsh; do
 done
 unset conf
 
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; 
+then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+
+ # Nix
+ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+    . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+ fi
+ # End Nix
 
 # Created by `pipx` on 2023-11-09 12:30:15
 export PATH="$PATH:/Users/arar/.local/bin"

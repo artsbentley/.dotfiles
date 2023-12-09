@@ -85,6 +85,8 @@ local config = {
 		k.cmd_key("P", k.multiple_actions(":GoToGit")),
 		k.cmd_key("p", k.multiple_actions(":GoToFile")),
 		k.cmd_key("q", k.multiple_actions(":qa!")),
+		-- terminal fg with ctrl + z
+		k.cmd_key("m", act.SendKey({ mods = "CTRL", key = "z" })),
 
 		-- window navigation
 		k.cmd_to_tmux_prefix("1", "1"),
