@@ -56,6 +56,7 @@ brew install pipx
 pipx ensurepath
 pipx install poetry
 brew install direnv
+brew insall sshs
 
 #brew install svim --gives vim commands to mac input fields
 

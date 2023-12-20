@@ -13,7 +13,7 @@ return {
     end,
     keys = { { "<leader>goe", "<cmd>GoIfErr<cr>", desc = "Golang Error" } },
     event = { "CmdlineEnter" },
-    ft = { "go", "gomod" },
+    ft = { "go", "gomod", "templ" },
     build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
 }, {
     "nvimtools/none-ls.nvim",

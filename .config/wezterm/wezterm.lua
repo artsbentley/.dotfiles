@@ -113,6 +113,7 @@ local config = {
 		k.cmd_to_tmux_prefix("l", "L"), -- switch last session
 		k.cmd_to_tmux_prefix("n", "l"), -- switch last window
 		k.cmd_to_tmux_prefix("L", ";"), -- switch last pane
+		k.cmd_to_tmux_prefix("y", "["), -- selecting mode
 
 		-- k.cmd_to_tmux_prefix("N", "%"),
 		k.cmd_to_tmux_prefix("o", "u"),
