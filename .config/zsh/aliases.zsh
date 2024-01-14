@@ -10,6 +10,9 @@ alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons' #
 alias lS='exa -1'                                                              # one column, just names
 alias lt='exa --tree --level=2'                                         # tree
 
+# CAT
+alias cat="bat"
+
 #SSH
 alias ssh="TERM=xterm-256color ssh"
 
@@ -45,7 +48,9 @@ alias echopath="echo $PATH | tr ':' '\n'"
 alias cargodep="cargo tree --all-features --target=all | fgrep -- -sys"
 
 # not working
-# alias addbinpath="export PATH=$PATH:$(pwd)"
+alias addbinpath='export PATH=$PATH:$PWD'
+
+alias oatmeal='oatmeal --theme-file ~/.config/oatmeal/gruvbox.tmtheme'
 
 
 #task warrior

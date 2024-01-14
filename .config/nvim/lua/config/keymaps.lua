@@ -146,16 +146,24 @@ vim.keymap.set({ "n", "o", "x" }, "ge", "<cmd>lua require('spider').motion('ge')
 
 -- window split
 vim.keymap.set("n", "<leader>we", "<cmd>vsplit<CR>", { desc = "Split window" })
+vim.keymap.set("n", "<leader>w<S-e>", "<cmd>split<CR>", { desc = "Split window horizontal" })
 
 -- buffer
 vim.keymap.set("n", "<leader>bb", "<cmd>Telescope buffers<cr>", { desc = "Telescope" })
+
+-- special paste commands
+vim.keymap.set("n", "<leader>pq", 'Vi"p', { desc = "paste inner quote" })
+vim.keymap.set("n", "<leader>pw", "Viwp", { desc = "paste inner word" })
 
 -- redo
 vim.keymap.set("n", "U", "<C-r>")
 
 -- CIW easy
-vim.keymap.set("n", "<BS>", "ciw")
-vim.keymap.set("v", "<BS>", "ciw")
+vim.keymap.set("n", "<BS>e", "l<cmd>lua require('spider').motion('b')<CR>cw")
+vim.keymap.set("n", "<BS>w", "ciw")
+vim.keymap.set("v", "<BS>w", "ciw")
+vim.keymap.set("n", "<BS>q", 'ci"')
+vim.keymap.set("v", "<BS>q", 'ci"')
 
 -- Maintain the cursor position when yanking a visual selection
 -- http://ddrscott.github.io/blog/2016/yank-without-jank/

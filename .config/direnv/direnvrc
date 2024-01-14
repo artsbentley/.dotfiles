@@ -1,0 +1,54 @@
+layout_postgres() {
+	export PGDATA="$(direnv_layout_dir)/postgres"
+	export PGHOST="$PGDATA"
+
+	if [[ ! -d "$PGDATA" ]]; then
+		initdb
+		cat >> "$PGDATA/postgresql.conf" <<-EOF
+			listen_addresses = ''
+			unix_socket_directories = '$PGHOST'
+		EOF
+		echo "CREATE DATABASE $USER;" | postgres --single -E postgres
+	fi
+}
+
+
+layout_kafka() {
+    export KAFKA_HOME="$(direnv_layout_dir)/kafka"
+    export PATH="$KAFKA_HOME/bin:$PATH"
+
+    if [[ ! -d "$KAFKA_HOME" ]]; then
+        # Download and extract Kafka
+        wget -q https://downloads.apache.org/kafka/3.6.1/kafka_2.13-3.6.1.tgz
+        tar -xzf kafka_2.13-3.6.1.tgz
+        mv kafka_2.13-3.6.1 "$KAFKA_HOME"
+        rm kafka_2.13-3.6.1.tgz
+
+        # Create data directory
+        mkdir -p "$KAFKA_HOME/data"
+
+        # Configure Kafka properties
+        cat <<EOF > "$KAFKA_HOME/config/server.properties"
+broker.id=1
+listeners=PLAINTEXT://localhost:9092
+log.dirs=$KAFKA_HOME/data
+auto.create.topics.enable=false
+delete.topic.enable=true
+EOF
+
+        # Start Zookeeper
+        cd "$KAFKA_HOME"
+        nohup bin/zookeeper-server-start.sh config/zookeeper.properties > zookeeper.log 2>&1 &
+
+        # Start Kafka Broker
+        nohup bin/kafka-server-start.sh config/server.properties > kafka.log 2>&1 &
+
+        # Create a Topic
+        bin/kafka-topics.sh --create --topic myTopic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+
+        # Print information
+        echo "Kafka environment is set up. Zookeeper and Kafka Broker are running."
+        echo "You can use 'bin/kafka-console-producer.sh' to produce messages and 'bin/kafka-console-consumer.sh' to consume messages."
+    fi
+}
+

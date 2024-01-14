@@ -11,7 +11,11 @@ return {
             go = "go1.19.7",
         })
     end,
-    keys = { { "<leader>goe", "<cmd>GoIfErr<cr>", desc = "Golang Error" } },
+    keys = {
+        { "<leader>goe", "<cmd>GoIfErr<cr>", desc = "Golang Error" },
+        { "<leader>goi", "<cmd>GoImplements<cr>", desc = "Golang Interface Implementation" },
+        { "<leader>got", "<cmd>GoAddTag<cr>", desc = "Golang Add Tag" },
+    },
     event = { "CmdlineEnter" },
     ft = { "go", "gomod", "templ" },
     build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries

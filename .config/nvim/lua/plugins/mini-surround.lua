@@ -3,12 +3,12 @@ return {
     opts = {
         mappings = {
             -- add = "gsa",
-            add = "<S-Enter>",
-            -- delete = "<S-BS>",
+            add = "<BS>a",
+            delete = "<BS>s",
             find = "gsf",
             find_left = "gsF",
             highlight = "gsh",
-            replace = "gsr",
+            replace = "<BS><S-A>",
             update_n_lines = "gsn",
         },
     },

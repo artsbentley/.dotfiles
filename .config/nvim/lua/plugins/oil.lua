@@ -4,7 +4,8 @@ return {}
 --     config = function()
 --         require("oil").setup({
 --             -- Id is automatically added at the beginning, and name at the end
---             vim.keymap.set("n", "<Leader>E", "<cmd>lua require('oil').open_float()<CR>", { desc = "Open file" }),
+--             vim.keymap.set("n", "<Leader>e", "<cmd>lua require('oil').open_float()<CR>", { desc = "Open file" }),
+--             vim.keymap.set("n", "<Leader>e", "<cmd>lua require('oil').open_float()<CR>", { desc = "Open file" }),
 --
 --             -- See :help oil-columns
 --             columns = {
@@ -33,7 +34,7 @@ return {}
 --             -- Restore window options to previous values when leaving an oil buffer
 --             restore_win_options = true,
 --             -- Skip the confirmation popup for simple operations
---             skip_confirm_for_simple_edits = false,
+--             skip_confirm_for_simple_edits = true,
 --             -- Deleted files will be removed with the `trash-put` command.
 --             delete_to_trash = false,
 --             -- Selecting a new/moved/renamed file or directory will prompt you to save changes first
@@ -72,7 +73,7 @@ return {}
 --             use_default_keymaps = true,
 --             view_options = {
 --                 -- Show files and directories that start with "."
---                 show_hidden = false,
+--                 show_hidden = true,
 --                 -- This function defines what is considered a "hidden" file
 --                 is_hidden_file = function(name, bufnr)
 --                     return vim.startswith(name, ".")

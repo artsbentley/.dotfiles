@@ -85,6 +85,7 @@ local config = {
 		k.cmd_key("P", k.multiple_actions(":GoToGit")),
 		k.cmd_key("p", k.multiple_actions(":GoToFile")),
 		k.cmd_key("q", k.multiple_actions(":qa!")),
+		k.cmd_key("G", k.multiple_actions("lazygit")),
 		-- terminal fg with ctrl + z
 		k.cmd_key("m", act.SendKey({ mods = "CTRL", key = "z" })),
 
@@ -106,7 +107,7 @@ local config = {
 		k.cmd_to_tmux_prefix("d", "D"),
 		k.cmd_to_tmux_prefix("e", "%"),
 		k.cmd_to_tmux_prefix("E", '"'),
-		k.cmd_to_tmux_prefix("G", "G"),
+		-- k.cmd_to_tmux_prefix("G", "G"),
 		k.cmd_to_tmux_prefix("g", "g"), -- lazygit
 		-- k.cmd_to_tmux_prefix("j", "O"),
 		k.cmd_to_tmux_prefix("j", "T"),

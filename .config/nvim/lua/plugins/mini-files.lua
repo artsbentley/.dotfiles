@@ -1,3 +1,4 @@
+-- return {}
 return {
     "echasnovski/mini.files",
     event = "VeryLazy",
@@ -23,7 +24,7 @@ return {
             go_out_plus = "H",
             reset = "<BS>",
             show_help = "g?",
-            synchronize = ":w",
+            synchronize = "<Esc>:w",
             trim_left = "<",
             trim_right = ">",
         },
