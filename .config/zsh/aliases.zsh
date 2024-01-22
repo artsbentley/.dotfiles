@@ -1,14 +1,14 @@
 #general usage
-alias ls='exa -l --icons -a'                                                          # ls
-alias ll='exa -l --icons -a'                                                # list, size, type, git
-alias l='exa -lbF -l --icons -a --git'                                             # long list
-alias llm='exa -lbGd --git --sort=modified --icons'                            # long list, modified date sort
-alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale --icons'  # all list
-alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons' # all + extended list
+alias ls='eza --group-directories-first -l --icons -a'                                                          # ls
+alias ll='eza --group-directories-first -l --icons -a'                                                # list, size, type, git
+alias l='eza --group-directories-first -lbF -l --icons -a --git --sort=type --color=always'                                             # long list
+alias llm='eza --group-directories-first -lbGd --git --sort=modified --icons'                            # long list, modified date sort
+alias la='eza --group-directories-first -lbhHigUmuSa --time-style=long-iso --git --color-scale --icons'  # all list
+alias lx='eza --group-directories-first -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons' # all + extended list
 
 # specialty views
-alias lS='exa -1'                                                              # one column, just names
-alias lt='exa --tree --level=2'                                         # tree
+alias lS='eza -1'                                                              # one column, just names
+alias lt='eza --tree --level=2'                                         # tree
 
 # CAT
 alias cat="bat"

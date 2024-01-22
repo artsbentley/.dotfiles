@@ -14,10 +14,22 @@ layout_postgres() {
 
 
 layout_kafka() {
+	GREEN='\033[0;32m'
+	NC='\033[0m'  # No Color
+
     export KAFKA_HOME="$(direnv_layout_dir)/kafka"
     export PATH="$KAFKA_HOME/bin:$PATH"
+	TOPICS_FILE=".topics.config"
 
-    if [[ ! -d "$KAFKA_HOME" ]]; then
+	# Read topics from the topics.config file
+	if [ -f "$TOPICS_FILE" ]; then
+		IFS=$'\n' read -d '' -r -a topics < "$TOPICS_FILE"
+	else
+		echo "Error: Topics configuration file '$TOPICS_FILE' not found."
+		exit 1
+	fi
+
+    if [[ ! -d "$kafka_home" ]]; then
         # Download and extract Kafka
         wget -q https://downloads.apache.org/kafka/3.6.1/kafka_2.13-3.6.1.tgz
         tar -xzf kafka_2.13-3.6.1.tgz
@@ -26,29 +38,23 @@ layout_kafka() {
 
         # Create data directory
         mkdir -p "$KAFKA_HOME/data"
-
-        # Configure Kafka properties
-        cat <<EOF > "$KAFKA_HOME/config/server.properties"
-broker.id=1
-listeners=PLAINTEXT://localhost:9092
-log.dirs=$KAFKA_HOME/data
-auto.create.topics.enable=false
-delete.topic.enable=true
-EOF
-
-        # Start Zookeeper
-        cd "$KAFKA_HOME"
-        nohup bin/zookeeper-server-start.sh config/zookeeper.properties > zookeeper.log 2>&1 &
-
-        # Start Kafka Broker
-        nohup bin/kafka-server-start.sh config/server.properties > kafka.log 2>&1 &
-
-        # Create a Topic
-        bin/kafka-topics.sh --create --topic myTopic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
-
-        # Print information
-        echo "Kafka environment is set up. Zookeeper and Kafka Broker are running."
-        echo "You can use 'bin/kafka-console-producer.sh' to produce messages and 'bin/kafka-console-consumer.sh' to consume messages."
     fi
+
+    # Copy server.properties file from current directory to Kafka config directory
+    cp -f .kafka.properties "$KAFKA_HOME/config/server.properties"
+
+    # Start Kafka Broker
+    nohup $KAFKA_HOME/bin/kafka-server-start.sh $KAFKA_HOME/config/server.properties > $KAFKA_HOME/kafka.log 2>&1 &
+
+	for topic in "${topics[@]}"; do
+		$KAFKA_HOME/bin/kafka-topics.sh --create --topic "$topic" --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+    done
+
+    echo "Kafka environment is set up. Zookeeper and Kafka Broker are running."
+
+	# List existing topics
+    echo -e "\n${GREEN}Existing Topics:${NC}"
+    $KAFKA_HOME/bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+	echo -e 
 }
 

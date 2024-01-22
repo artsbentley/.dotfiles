@@ -37,7 +37,7 @@ brew install lulu
 brew install lf
 brew install tmux
 # directory traversing sugar
-brew install exa
+brew install eza
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 brew install lazygit
 # dependency for telescope live_grep:
@@ -50,6 +50,7 @@ brew install rustup
 brew install bat
 brew install spotify-tui
 brew install just
+brew install joshmedeski/sesh/sesh
 # python poetry install with pipx, poetry isnt supposed to be installed with
 # brew
 brew install pipx
