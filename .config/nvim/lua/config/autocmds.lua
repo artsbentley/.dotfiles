@@ -12,6 +12,12 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     command = "!brew services restart yabai",
 })
 
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function()
+        vim.cmd("NoNeckPain")
+    end,
+})
+
 vim.api.nvim_create_autocmd("BufWritePost", {
     pattern = { ".skhdrc" },
     command = "!brew services restart skhd",

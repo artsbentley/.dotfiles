@@ -8,6 +8,11 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 -- CUSTOM COMMANDS
 --telescope
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function()
+        vim.cmd("NoNeckPain")
+    end,
+})
 vim.cmd([[command! -nargs=0 GoToFile :Telescope find_files hidden=true]])
 vim.cmd([[command! -nargs=0 GoToGitFile :Telescope git_files hidden=true]])
 vim.cmd([[command! -nargs=0 TelescopeBuffers :lua require("telescope.builtin").buffers({ layout_strategy='vertical', layout_config={width=0.3, height=0.8}, sort_lastused = true })]])
@@ -29,6 +34,13 @@ vim.cmd([[command! -nargs=0 HarpoonAddFile :lua require("harpoon.mark").add_file
 vim.cmd([[command! -nargs=0 HarpoonShowMenu :lua require("harpoon.ui").toggle_quick_menu()]])
 -- :lua require('telescope.builtin').find_files({layout_strategy='vertical',layout_config={width=0.5}})
 -- vim.cmd([[command! -nargs=0 OpenOilProjectDir :Oil ]])
+--
+
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function()
+        vim.cmd("NoNeckPain")
+    end,
+})
 
 require("lazy").setup({
     spec = {

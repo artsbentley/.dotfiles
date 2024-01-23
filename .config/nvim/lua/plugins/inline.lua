@@ -41,7 +41,7 @@ return {
 
                 local buffer = {
                     { get_diagnostic_label(props) },
-                    { get_git_diff(props) },
+                    -- { get_git_diff(props) },
                     { ft_icon, guifg = ft_color },
                     { " " },
                     { filename, gui = modified },
