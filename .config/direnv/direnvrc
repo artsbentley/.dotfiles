@@ -5,13 +5,88 @@ layout_postgres() {
 	if [[ ! -d "$PGDATA" ]]; then
 		initdb
 		cat >> "$PGDATA/postgresql.conf" <<-EOF
-			listen_addresses = ''
+			listen_addresses = 'localhost'
+			port = '5432'
 			unix_socket_directories = '$PGHOST'
+			ssl = off
 		EOF
 		echo "CREATE DATABASE $USER;" | postgres --single -E postgres
 	fi
 }
 
+layout_python() {
+    if [ ! -f "flake.nix" ]; then
+        if [ "$(ls -A 2>/dev/null | grep -E -v '^\.envrc$')" ]; then
+            echo "Current directory is not empty. Please move or remove existing files."
+        else
+            # Clone into a temporary directory
+            temp_dir=$(mktemp -d)
+            git clone https://github.com/artsbentley/layout_python.git "$temp_dir"
+
+            # Move contents to the parent directory, excluding .envrc
+            shopt -s dotglob
+            mv "$temp_dir"/* "$temp_dir"/.envrc ./
+
+            # Remove the temporary directory
+            rm -r "$temp_dir"
+
+            # Add and commit the changes
+            rm -rf .git
+            git init
+            git add .
+        fi
+    fi
+}
+
+layout_go() {
+   if [ ! -f "flake.nix" ] && [ ! -f "gomod2nix.toml" ]; then
+        if [ "$(ls -A 2>/dev/null | grep -E -v '^\.envrc$')" ]; then
+            echo "Current directory is not empty. Please move or remove existing files."
+        else
+            # Clone into a temporary directory
+            temp_dir=$(mktemp -d)
+            git clone https://github.com/artsbentley/layout_go.git "$temp_dir"
+
+            # Move contents to the parent directory, excluding .envrc
+            shopt -s dotglob
+            mv "$temp_dir"/* "$temp_dir"/.envrc ./
+
+            # Remove the temporary directory
+            rm -r "$temp_dir"
+
+            # Add and commit the changes
+            rm -rf .git
+            git init
+            git add .
+
+			# initialize nix flake
+			nix flake init -t github:nix-community/gomod2nix#app
+			nix flake update 
+        fi
+    fi
+
+#    if [ ! -f "flake.nix" ] && [ ! -f "gomod2nix.toml" ]; then
+#        if [ "$(ls -A 2>/dev/null | grep -E -v '^\.envrc$')" ]; then
+#            echo "Current directory is not empty. Please move or remove existing files."
+#        else
+#            # Clone into a temporary directory
+#            temp_dir=$(mktemp -d)
+#            git clone https://github.com/artsbentley/layout_go.git "$temp_dir"
+#
+#            # Move contents to the parent directory, excluding .envrc
+#            shopt -s dotglob
+#            mv "$temp_dir"/* "$temp_dir"/.envrc ./
+#
+#            # Remove the temporary directory
+#            rm -r "$temp_dir"
+#
+#            # Add and commit the changes
+#            rm -rf .git
+#            git init
+#            git add .
+#        fi
+#    fi
+}
 
 layout_kafka() {
 	GREEN='\033[0;32m'
