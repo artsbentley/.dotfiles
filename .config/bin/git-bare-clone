@@ -6,7 +6,8 @@ trap cleanup SIGINT SIGTERM ERR EXIT
 usage() {
 	cat <<EOF # remove the space between << and EOF, this is due to web plugin issue
 Usage: $(
-		basename "${BASH_SOURCE[0]}") [-h] [-v] [-l] repository
+		basename "${BASH_SOURCE[0]}"
+	) [-h] [-v] [-l] repository
 
 Clone a bare git repo and set up environment for working comfortably and exclusively from worktrees.
 

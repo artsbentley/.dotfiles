@@ -5,10 +5,8 @@ worktree_name="$1"
 # Remove local worktree
 git worktree remove -f "$worktree_name"
 
+# Remove local branch and its tracking branch
+git worktree prune
+
 # Remove branch from origin
 git push origin --delete "$worktree_name"
-
-# Remove local branch
-git branch -d "$worktree_name"
-
-git worktree prune
