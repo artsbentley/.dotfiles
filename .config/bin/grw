@@ -10,3 +10,5 @@ git push origin --delete "$worktree_name"
 
 # Remove local branch
 git branch -d "$worktree_name"
+
+git worktree prune
