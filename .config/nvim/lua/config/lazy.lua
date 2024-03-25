@@ -18,9 +18,9 @@ vim.cmd([[command! -nargs=0 GoToGitFile :Telescope git_files hidden=true]])
 vim.cmd([[command! -nargs=0 TelescopeBuffers :lua require("telescope.builtin").buffers({ layout_strategy='vertical', layout_config={width=0.3, height=0.8}, sort_lastused = true })]])
 
 --  Telekasten
-vim.cmd([[command! -nargs=0 CreateNewNote :Telekasten new_note]])
-vim.cmd([[command! -nargs=0 FindNote :Telekasten find_notes]])
-vim.cmd([[command! -nargs=0 LiveGrepNote :Telescope live_grep cwd=$WIKI_DIR search_dirs={'$WIKI_DIR'}]])
+-- vim.cmd([[command! -nargs=0 CreateNewNote :Telekasten new_note]])
+-- vim.cmd([[command! -nargs=0 FindNote :Telekasten find_notes]])
+-- vim.cmd([[command! -nargs=0 LiveGrepNote :Telescope live_grep cwd=$WIKI_DIR search_dirs={'$WIKI_DIR'}]])
 
 vim.cmd([[command! -nargs=0 OpenOilCwd :Oil --float]])
 
@@ -60,7 +60,7 @@ require("lazy").setup({
         { import = "lazyvim.plugins.extras.lang.elixir" },
 
         -- OTHER
-        { import = "lazyvim.plugins.extras.editor.symbols-outline" },
+        -- { import = "lazyvim.plugins.extras.editor.symbols-outline" },
 
         -- FORMATTING
         { import = "lazyvim.plugins.extras.formatting.black" },

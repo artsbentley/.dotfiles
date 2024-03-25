@@ -19,6 +19,7 @@ return {
             "yaml",
             "scala",
             "rust",
+            "gleam",
         },
     },
 }

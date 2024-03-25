@@ -49,6 +49,7 @@ return {
             "yamlfmt",
             "yamllint",
             "yq",
+            "gleam",
         },
     },
 }

@@ -8,7 +8,7 @@ return {
     },
     config = function()
         require("go").setup({
-            go = "go1.19.7",
+            go = "go1.22",
         })
     end,
     keys = {

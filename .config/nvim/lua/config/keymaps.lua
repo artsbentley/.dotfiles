@@ -46,10 +46,6 @@ require("telescope").setup({
 --     vim.keymap.set("n", "<Leader>E", "<cmd>lua require('oil').open_float()<CR>", { desc = "Open file" }),
 -- })
 
--- TELEKASTEN
--- -- Launch panel if nothing is typed after <leader>z
-vim.keymap.set("n", "<leader>z", "<cmd>Telekasten panel<CR>")
-
 -- Most used functions
 vim.keymap.set("n", "<leader>zf", "<cmd>Telekasten find_notes<CR>")
 vim.keymap.set("n", "<leader>zg", "<cmd>Telekasten search_notes<CR>")
@@ -127,6 +123,10 @@ vim.keymap.set("i", "<f5>", "<cmd>HarpoonNav5<cr>", { desc = "Harpoon Buffer 5" 
 -- LSP RESTART
 vim.keymap.set("n", "<leader>cc", "<cmd>LspRestart<CR>", { desc = "Start LSP" })
 
+-- recenter after going back and forth from position
+-- vim.keymap.set("n", "<C-o>", "<C-o>zz")
+-- vim.keymap.set("n", "<C-e>", "<C-e>zz")
+
 --  MINI FILES NEOTREE OVERWRITE
 vim.keymap.set("n", "<leader>e", function()
     require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
@@ -158,6 +158,9 @@ vim.keymap.set("n", "<leader>pw", "Viwp", { desc = "paste inner word" })
 -- redo
 vim.keymap.set("n", "U", "<C-r>")
 
+--replace
+vim.keymap.set("n", "<leader>re", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gcI<Left><Left><Left><Left>")
+
 -- CIW easy
 vim.keymap.set("n", "<BS>e", "l<cmd>lua require('spider').motion('b')<CR>cw")
 vim.keymap.set("n", "<BS>w", "ciw")
@@ -172,3 +175,6 @@ vim.keymap.set("v", "Y", "myY`y")
 
 -- clipboard
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank to clipboard" })
+
+vim.keymap.set("i", "<A-BS>", "<c-w>")
+vim.keymap.set("n", "<A-BS>", "i<c-w><Esc>")
