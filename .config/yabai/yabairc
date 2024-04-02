@@ -68,6 +68,7 @@ yabai -m config window_gap $gap_width
 # apps to not manage (ignore)
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Microsoft Teams$" manage=off
+yabai -m rule --add app="^League of Legends$" manage=off
 yabai -m rule --add app="^Microsoft Teams classic$" manage=off
 yabai -m rule --add app="^Microsoft Teams (work or school)$" manage=off
 yabai -m rule --add app="^Archive Utility$" manage=off
@@ -78,6 +79,7 @@ yabai -m rule --add app="^balenaEtcher$" manage=off
 yabai -m rule --add app="^Creative Cloud$" manage=off
 yabai -m rule --add app="^Logi Options$" manage=off
 yabai -m rule --add app="^Alfred Preferences$" manage=off
-yabai -m rule --add app="Raycast" manage=off
+yabai -m rule --add app="^Raycast" manage=off
+yabai -m rule --add app="^Finder" manage=off
 
 echo "yabai configuration loaded.."
