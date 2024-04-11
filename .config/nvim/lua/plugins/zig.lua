@@ -48,7 +48,7 @@ return {
                 zls = {
                     settings = {
                         semantic_tokens = "full",
-                        warn_style = false,
+                        -- warn_style = false,
                         highlight_global_var_declarations = false,
                         -- NOTE: never seen an inlay hint
                         -- and I don't know what record_session does

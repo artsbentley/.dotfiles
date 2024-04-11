@@ -9,7 +9,7 @@ return {
             "gofumpt",
             "autopep8",
             "bash-debug-adapter",
-            "black",
+            -- "black",
             "bash-language-server",
             "debugpy",
             "goimports",
@@ -31,6 +31,7 @@ return {
             "shellcheck",
             "shfmt",
             "stylua",
+            "ruff",
 
             "go-debug-adapter",
             "hadolint",
