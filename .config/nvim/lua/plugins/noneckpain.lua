@@ -9,9 +9,9 @@ return {
 			blend = 0.2
 		},
 		buffers = {
-			right = {
-            enabled = false,
-	},
+	-- 		right = {
+	--            enabled = false,
+	-- },
 
         wo = {
             fillchars = "eob: ",
