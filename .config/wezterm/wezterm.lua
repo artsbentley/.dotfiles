@@ -75,6 +75,17 @@ local config = {
 		k.shift_key("UpArrow", act.SendKey({ mods = "CTRL", key = "k" })),
 		k.shift_key("RightArrow", act.SendKey({ mods = "CTRL", key = "l" })),
 
+		-- tmux pane resizing
+		k.shift_key("LeftArrow", act.SendKey({ mods = "CTRL", key = "h" })),
+		k.shift_key("DownArrow", act.SendKey({ mods = "CTRL", key = "j" })),
+		k.shift_key("UpArrow", act.SendKey({ mods = "CTRL", key = "k" })),
+		k.shift_key("RightArrow", act.SendKey({ mods = "CTRL", key = "l" })),
+
+		k.cmd_shift_key("LeftArrow", act.SendKey({ mods = "CTRL|META", key = "h" })),
+		k.cmd_shift_key("DownArrow", act.SendKey({ mods = "CTRL|META", key = "j" })),
+		k.cmd_shift_key("UpArrow", act.SendKey({ mods = "CTRL|META", key = "k" })),
+		k.cmd_shift_key("RightArrow", act.SendKey({ mods = "CTRL|META", key = "l" })),
+
 		-- k.cmd_key(".", k.multiple_actions(":ZenMode")),
 		-- k.cmd_key("]", act.SendKey({ mods = "CTRL", key = "i" })),
 		-- k.cmd_key("i", k.multiple_actions(":SmartGoTo")),
