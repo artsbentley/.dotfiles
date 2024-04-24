@@ -31,6 +31,8 @@ vim.keymap.set("n", "<Leader>ui", toggle_diagnostics, { desc = "Toggle [i]nline 
 -- })
 
 -- source: https://www.reddit.com/r/neovim/comments/udx0fi/telescopebuiltinlive_grep_and_operator/
+-- TELESCOPE NEEDS TO BE IN THIS DIRECTORY TO MAKE PROPER ADJUSTMENTS OVER
+-- LAZYVIM PREFERENCES
 require("telescope").setup({
     pickers = {
         live_grep = {
@@ -38,6 +40,55 @@ require("telescope").setup({
                 -- AND operator for live_grep like how fzf handles spaces with wildcards in rg
                 return { prompt = prompt:gsub("%s", ".*") }
             end,
+        },
+        find_files = {
+            theme = "dropdown",
+            preview = {
+                hide_on_startup = true, -- hide previewer when picker starts
+            },
+            sorting_strategy = "ascending",
+            find_command = { "rg", "--files", "--glob", "!**/.git/*", "-L" },
+        },
+        git_files = {
+            theme = "dropdown",
+            layout_config = {
+                height = 0.63,
+            },
+            preview = {
+                hide_on_startup = true, -- hide previewer when picker starts
+            },
+            sorting_strategy = "ascending",
+        },
+    },
+    defaults = {
+        file_ignore_patterns = {
+            ".git/",
+            "node_modules",
+            -- Files
+            "%.a",
+            "%.class",
+            "%.mkv",
+            "%.mp4",
+            "%.o",
+            "%.out",
+            "%.pdf",
+            "%.zip",
+            -- Directories
+            ".cache",
+            ".git/",
+            ".github/",
+            ".node_modules/",
+        },
+        mappings = {
+            i = {
+                ["<C-p>"] = require("telescope.actions.layout").toggle_preview,
+            },
+        },
+        layout_strategy = "flex",
+        pickers = {
+            find_files = {
+                theme = "dropdown",
+            },
         },
     },
 })

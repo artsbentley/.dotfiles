@@ -17,7 +17,7 @@ return {
             "golangci-lint",
             "golines",
             "gopls",
-            "golangci-lint-langserver",
+            -- "golangci-lint-langserver",
             "delve",
             "html-lsp",
             "json-lsp",

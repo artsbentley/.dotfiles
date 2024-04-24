@@ -12,6 +12,11 @@ return {
                     -- telescope-undo.nvim config, see below
                 },
             },
+            pickers = {
+                find_files = {
+                    theme = "dropdown",
+                },
+            },
         })
         require("telescope").load_extension("undo")
         require("telescope").load_extension("smart_open")
@@ -26,11 +31,12 @@ return {
                 require("telescope").extensions.undo.undo({ layout_strategy = "vertical", side_by_side = false })
             end,
         },
-        {
-            "<leader><leader>",
-            function()
-                require("telescope").extensions.smart_open.smart_open()
-            end,
-        },
+        -- smart open telescope
+        -- {
+        --     "<leader><leader>",
+        --     function()
+        --         require("telescope").extensions.smart_open.smart_open()
+        --     end,
+        -- },
     },
 }
