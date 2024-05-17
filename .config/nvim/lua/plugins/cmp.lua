@@ -5,14 +5,15 @@ return {
         config = function()
             local cmp = require("cmp")
             local lspkind = require("lspkind")
-            lspkind.init({
-                symbol_map = {
-                    Copilot = "",
-                },
-            })
-
+            -- lspkind.init({
+            --     symbol_map = {
+            --         Copilot = "",
+            --     },
+            -- })
+            local types = require("cmp.types")
             local compare = require("cmp.config.compare")
             cmp.setup({
+                preselect = types.cmp.PreselectMode.None,
                 enabled = function()
                     if vim.bo.buftype == "prompt" then
                         return false
@@ -27,7 +28,7 @@ return {
                         -- border = nil,
                         col_offset = -3,
                         side_padding = 0,
-                        scrollbar = "║",
+                        scrollbar = true,
                     },
                     -- creates the corners of the window
                     documentation = cmp.config.window.bordered(),
@@ -39,31 +40,40 @@ return {
                 --     disallow_partial_matching = true,
                 --     disallow_prefix_unmatching = false,
                 -- },
+                -- formatting = {
+                --     fields = { "kind", "abbr", "menu" },
+                --     format = function(entry, vim_item)
+                --         local kind = lspkind.cmp_format({
+                --             mode = "symbol_text",
+                --             menu = {
+                --                 luasnip = "[Snip]",
+                --                 nvim_lsp = "[LSP]",
+                --                 nvim_lsp_signature_help = "[Sign]",
+                --                 nvim_lua = "[Lua]",
+                --                 emoji = "[Emoji]",
+                --                 buffer = "[Buf]",
+                --                 copilot = "[Copilot]",
+                --                 crates = "[Crate]",
+                --                 path = "[Path]",
+                --                 cmdline = "[Cmd]",
+                --                 cmdline_history = "[Hist]",
+                --                 git = "[Git]",
+                --                 conventionalcommits = "[Conv]",
+                --                 calc = "[Calc]",
+                --             },
+                --         })(entry, vim_item)
+                --         local strings = vim.split(kind.kind, "%s", { trimempty = true })
+                --         kind.kind = " " .. strings[1] .. " "
+                --         return kind
+                --     end,
+                -- },
                 formatting = {
-                    fields = { "kind", "abbr", "menu" },
-                    format = function(entry, vim_item)
-                        local kind = lspkind.cmp_format({
-                            mode = "symbol_text",
-                            menu = {
-                                luasnip = "[Snip]",
-                                nvim_lsp = "[LSP]",
-                                nvim_lsp_signature_help = "[Sign]",
-                                nvim_lua = "[Lua]",
-                                emoji = "[Emoji]",
-                                buffer = "[Buf]",
-                                copilot = "[Copilot]",
-                                crates = "[Crate]",
-                                path = "[Path]",
-                                cmdline = "[Cmd]",
-                                cmdline_history = "[Hist]",
-                                git = "[Git]",
-                                conventionalcommits = "[Conv]",
-                                calc = "[Calc]",
-                            },
-                        })(entry, vim_item)
-                        local strings = vim.split(kind.kind, "%s", { trimempty = true })
-                        kind.kind = " " .. strings[1] .. " "
-                        return kind
+                    format = function(_, item)
+                        local icons = require("lazyvim.config").icons.kinds
+                        if icons[item.kind] then
+                            item.kind = icons[item.kind] .. item.kind
+                        end
+                        return item
                     end,
                 },
                 snippet = {
@@ -71,7 +81,8 @@ return {
                         require("luasnip").lsp_expand(args.body)
                     end,
                 },
-                completion = { completeopt = "menu,menuone,noinsert,noselect" },
+                -- completion = { completeopt = "menu,menuone,noinsert,noselect" },
+                completion = { completeopt = "menu, menuone, noinsert, noselect" },
                 -- mapping = require("pynappo/keymaps").cmp.insert(),
                 mapping = cmp.mapping.preset.insert({
                     ["<C-u>"] = cmp.mapping.scroll_docs(-4),
@@ -94,7 +105,7 @@ return {
                     { name = "crates" },
                     { name = "emoji" },
                     { name = "calc" },
-                    { name = "copilot" },
+                    -- { name = "copilot" },
                     { name = "path" },
                     { name = "nvim_lua" },
                     -- { max_item_count = 4 },
@@ -129,7 +140,7 @@ return {
                     },
                 },
                 view = { entries = { name = "custom", selection_order = "near_cursor" } },
-                experimental = { ghost_text = false },
+                experimental = { ghost_text = true },
             })
 
             cmp.setup.filetype("gitcommit", {
@@ -181,21 +192,21 @@ return {
             },
         },
     },
-    {
-        "zbirenbaum/copilot-cmp",
-        event = { "BufRead", "BufNewFile" },
-        dependencies = {
-            {
-                "zbirenbaum/copilot.lua",
-                config = function()
-                    require("copilot").setup()
-                end,
-            },
-        },
-        config = function()
-            require("copilot_cmp").setup()
-        end,
-    },
+    -- {
+    --     "zbirenbaum/copilot-cmp",
+    --     event = { "BufRead", "BufNewFile" },
+    --     dependencies = {
+    --         {
+    --             "zbirenbaum/copilot.lua",
+    --             config = function()
+    --                 require("copilot").setup()
+    --             end,
+    --         },
+    --     },
+    --     config = function()
+    --         require("copilot_cmp").setup()
+    --     end,
+    -- },
     {
         "petertriho/cmp-git",
         ft = { "gitcommit", "gitrebase", "octo" },

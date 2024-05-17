@@ -30,7 +30,7 @@ vim.o.ls = 0 -- Disable line splitting for Ex commands
 vim.o.ch = 0 -- Disable command line history
 
 -- Preview of snippets
-vim.opt.completeopt = { "menuone", "noselect" } -- Set the completion options
+vim.opt.completeopt = { "menuone", "noselect", "noinsert" } -- Set the completion options
 vim.opt.pumblend = 0 -- Popup menu transparency level
 
 -- Search
