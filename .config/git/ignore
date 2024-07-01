@@ -21,3 +21,5 @@ tscommand*.txt
 
 # npm things
 npm-debug.log
+
+.config/lazygit/state.yml

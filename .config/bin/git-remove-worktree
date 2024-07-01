@@ -10,3 +10,6 @@ git worktree prune
 
 # Remove branch from origin
 git push origin --delete "$worktree_name"
+
+#Remove local branch if prune didnt work
+git branch -d "$worktree_name"

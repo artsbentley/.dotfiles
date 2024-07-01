@@ -1,19 +1,21 @@
 [init]
     defaultBranch = main
 [user]
-	name = artsbentley
-	email = artsbentley@gmail.com
+    name = artsbentley
+    email = artsbentley@gmail.com
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 [alias]
-    # list all aliases
-    la = "!git config -l | grep alias | cut -c 7-"
+    # list all aliases with color
+    la = "!git config -l | grep alias | cut -c 7- | sed -e 's/\\([^=]*\\)=/\\x1b[32m\\1\\x1b[0m=\\x1b[34m/'"
     delete-merged-branches = "!f() { git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1}; }; f"
-
-	cleanup = "!git remote prune origin && git gc && git clean -df && git stash clear"
+    cleanup = "!git remote prune origin && git gc && git clean -df && git stash clear"
 [core]
     pager = delta
     editor = vim
     whitespace = cr-at-eol
-
+[rebase]
+    updateRefs = true
+[github]
+    user = artsbentley
 
