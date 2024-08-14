@@ -36,11 +36,9 @@ brew install jq
 brew install lulu
 brew install lf
 brew install tmux
-# directory traversing sugar
 brew install eza
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 brew install lazygit
-# dependency for telescope live_grep:
 brew install ripgrep
 brew install lazydocker
 brew install zoxide
@@ -58,8 +56,10 @@ pipx ensurepath
 pipx install poetry
 brew install direnv
 brew insall sshs
+brew install noahgorstein/tap/jqp
 brew install atac
 brew install hurl
+brew install atuin
 
 #brew install svim --gives vim commands to mac input fields
 
@@ -72,6 +72,8 @@ brew install --cask karabiner-elements
 brew install --cask bettertouchtool
 brew install --cask telegram
 brew install --cask google-drive
+brew install --cask eqmac
+brew install --cask monitorcontrol
 
 # Mac App Store Apps
 echo "Installing Mac App Store Apps..."
