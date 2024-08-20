@@ -44,3 +44,5 @@ export PATH="$PATH:/Users/arar/.local/bin"
 
 # direnv
 eval "$(direnv hook zsh)"
+# Bind ctrl-r but not up arrow
+eval "$(atuin init zsh --disable-up-arrow)"
