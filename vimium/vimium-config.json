@@ -4,6 +4,8 @@ map s LinkHints.activateMode
 map S LinkHints.activateModeToOpenInNewTab
 map e Vomnibar.activateTabSelection
 
+map l visitPreviousTab
+
 map  <left> previousTab
 map <right> nextTab
 map <up> scrollUp
