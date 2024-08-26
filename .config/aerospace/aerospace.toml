@@ -88,6 +88,8 @@ alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
+alt-3 = "workspace S"
+alt-4 = "workspace T"
 # alt-a = "workspace A"
 # alt-b = 'workspace B' # Blender
 # alt-d = 'workspace D' # Discord
