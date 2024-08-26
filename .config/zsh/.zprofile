@@ -8,3 +8,6 @@ export PATH=$HOME/.cargo/bin:$PATH
 
 # Created by `pipx` on 2023-11-09 12:30:15
 export PATH="$PATH:/Users/arar/.local/bin"
+
+# Added by OrbStack: command-line tools and integration
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
