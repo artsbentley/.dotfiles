@@ -7,20 +7,10 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     command = "execute 'silent !tmux source <afile> --silent'",
 })
 
-vim.api.nvim_create_autocmd("BufWritePost", {
-    pattern = { ".yabairc" },
-    command = "!brew services restart yabai",
-})
-
 vim.api.nvim_create_autocmd("VimEnter", {
     callback = function()
         vim.cmd("NoNeckPain")
     end,
-})
-
-vim.api.nvim_create_autocmd("BufWritePost", {
-    pattern = { ".skhdrc" },
-    command = "!brew services restart skhd",
 })
 
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufFilePre", "BufRead" }, {
@@ -63,3 +53,15 @@ vim.keymap.set("n", "<Leader>bc", function()
         end
     end
 end, { silent = true, desc = "Close unused buffers" })
+
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+--     pattern = "*",
+--     callback = function()
+--         vim.cmd([[ hi! link LazyGitFloat TelescopePreviewNormal ]])
+--         vim.cmd([[ hi! link LazyGitBorder TelescopePreviewBorder ]])
+--         vim.cmd([[ hi! link MiniFilesTitle TelescopeResultsTitle ]])
+--         vim.cmd([[ hi! link MiniFilesTitleFocused TelescopePromptTitle ]])
+--         vim.cmd([[ hi! link MiniFilesBorder TelescopePreviewBorder ]])
+--         vim.cmd([[ hi! MatchParen guifg=NONE ]])
+--     end,
+-- })

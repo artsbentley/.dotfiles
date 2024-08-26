@@ -97,22 +97,13 @@ require("telescope").setup({
 --     vim.keymap.set("n", "<Leader>E", "<cmd>lua require('oil').open_float()<CR>", { desc = "Open file" }),
 -- })
 
--- Most used functions
-vim.keymap.set("n", "<leader>zf", "<cmd>Telekasten find_notes<CR>")
-vim.keymap.set("n", "<leader>zg", "<cmd>Telekasten search_notes<CR>")
-vim.keymap.set("n", "<leader>zd", "<cmd>Telekasten goto_today<CR>")
-vim.keymap.set("n", "<leader>zz", "<cmd>Telekasten follow_link<CR>")
-vim.keymap.set("n", "<leader>zn", "<cmd>Telekasten new_note<CR>")
-vim.keymap.set("n", "<leader>zt", "<cmd>Telekasten new_templated_note<CR>")
-vim.keymap.set("n", "<leader>zst", "<cmd>Telekasten show_tags<CR>")
-vim.keymap.set("n", "<leader>zsc", "<cmd>Telekasten show_calendar<CR>")
-vim.keymap.set("n", "<leader>zsb", "<cmd>Telekasten show_backlinks<CR>")
-vim.keymap.set("n", "<leader>zI", "<cmd>Telekasten insert_img_link<CR>")
-vim.keymap.set("n", "<leader>zv", "<cmd>Telekasten switch_vault<CR>")
--- vim.keymap.set("n", "<leader>zt", "<cmd>Telekasten toggle_todo<CR>") these dont work, see :h Zettelkasten for implementation withing function of configuration
--- vim.keymap.set("v", "<leader>zt", "<cmd>Telekasten toggle_todo<CR>")
-vim.keymap.set("n", "<leader>#", "<cmd>Telekasten show_tags<CR>")
--- vim.keymap.set("n", "<leader>zy", "<cmd>Telekasten yank_notelink<CR>")
+vim.keymap.set({ "i", "s" }, "<c-k>", function()
+    return vim.snippet.active({ direction = 1 }) and vim.snippet.jump(1)
+end, { silent = true })
+
+-- vim.keymap.set("i", "<C-k>", function()
+--     vim.lsp.buf.signature_help()
+-- end)
 
 local toggleterm = require("toggleterm")
 toggleterm.setup(vim.keymap.set("n", "<S-l>", "<cmd>ToggleTerm size=15 persist_mode= true direction=horizontal<CR>"))
@@ -202,6 +193,9 @@ vim.keymap.set("n", "<leader>w<S-e>", "<cmd>split<CR>", { desc = "Split window h
 -- buffer
 vim.keymap.set("n", "<leader>bb", "<cmd>Telescope buffers<cr>", { desc = "Telescope" })
 
+-- setup local leader
+vim.g.maplocalleader = ","
+
 -- special paste commands
 vim.keymap.set("n", "<leader>pq", 'Vi"p', { desc = "paste inner quote" })
 vim.keymap.set("n", "<leader>pw", "Viwp", { desc = "paste inner word" })
@@ -226,6 +220,8 @@ vim.keymap.set("v", "Y", "myY`y")
 
 -- clipboard
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank to clipboard" })
+vim.keymap.set("n", "y", '"+y', { noremap = true })
+vim.keymap.set("v", "y", '"+y', { noremap = true })
 
 vim.keymap.set("i", "<A-BS>", "<c-w>")
 vim.keymap.set("n", "<A-BS>", "i<c-w><Esc>")

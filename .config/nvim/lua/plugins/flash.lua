@@ -5,6 +5,21 @@ return {
     ---@type Flash.Config
     opts = {
         require("flash").toggle(false),
+        jump = {
+            autojump = true,
+        },
+        label = {
+            style = "inline",
+        },
+        highlight = {
+            backdrop = false,
+            matches = false,
+        },
+        modes = {
+            char = {
+                enabled = false,
+            },
+        },
     },
 
     vim.keymap.set({ "n", "x", "o" }, "<leader>t", function()

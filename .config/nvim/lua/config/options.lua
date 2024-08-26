@@ -2,6 +2,9 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+-- setup local leader
+-- vim.g.maplocalleader = ","
+
 -- Turn off backups
 vim.opt.backup = false -- Disable backup files
 vim.opt.writebackup = false -- Do not backup the file while editing
@@ -68,6 +71,9 @@ vim.opt.isfname:append("@-@") -- Allow filenames with special characters
 vim.opt.signcolumn = "yes" -- Always show the sign column
 vim.opt.updatetime = 50 -- Set the time interval for writing swap files and updating changes
 vim.opt.wrap = false -- Disable line wrapping
+
+-- Set to "basedpyright" to use basedpyright instead of pyright.
+-- vim.g.lazyvim_python_lsp = "basedpyright"
 
 -- clipboard
 vim.opt.clipboard = ""
