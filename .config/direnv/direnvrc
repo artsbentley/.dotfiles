@@ -14,6 +14,32 @@ layout_postgres() {
 	fi
 }
 
+layout_dshpython() {
+    if [ ! -f "flake.nix" ]; then
+        if [ "$(ls -A 2>/dev/null | grep -E -v '^\.envrc$')" ]; then
+            echo "Current directory is not empty. Please move or remove existing files."
+        else
+            # Clone into a temporary directory
+            temp_dir=$(mktemp -d)
+            git clone https://github.com/kpn-dsh/dsh-sdk-platform-py.git "$temp_dir"
+
+            # Move contents to the parent directory, excluding .envrc
+            shopt -s dotglob
+            mv "$temp_dir"/* "$temp_dir"/.envrc ./
+
+            # Remove the temporary directory
+            rm -r "$temp_dir"
+
+            # Add and commit the changes
+            rm -rf .git
+			rm README.md
+			sed -i '/\blayout dshpy\b/d' .envrc
+            git init
+            git add .
+        fi
+    fi
+	}
+
 layout_python() {
     if [ ! -f "flake.nix" ]; then
         if [ "$(ls -A 2>/dev/null | grep -E -v '^\.envrc$')" ]; then
@@ -32,11 +58,13 @@ layout_python() {
 
             # Add and commit the changes
             rm -rf .git
+			sed -i '/\blayout py\b/d' .envrc
             git init
             git add .
         fi
     fi
 }
+
 
 layout_go() {
    if [ ! -f "flake.nix" ] && [ ! -f "gomod2nix.toml" ]; then
@@ -58,10 +86,6 @@ layout_go() {
             rm -rf .git
             git init
             git add .
-
-			# initialize nix flake
-			nix flake init -t github:nix-community/gomod2nix#app
-			nix flake update 
         fi
     fi
 
