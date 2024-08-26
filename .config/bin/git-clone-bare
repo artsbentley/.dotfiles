@@ -27,5 +27,5 @@ git fetch origin
 
 # Iterate over remote branches and create worktrees
 for branch in $(git branch -r | grep 'origin/' | sed 's/origin\///'); do
-	git worktree add --checkout "$branch" "refs/remotes/origin/$branch"
+	git worktree add "$branch" "$branch"
 done
