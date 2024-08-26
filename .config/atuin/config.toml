@@ -1,0 +1,5 @@
+dialect = "uk"
+style = "compact"
+invert = true
+inline_height = 16
+scroll_context_lines = 3
