@@ -57,7 +57,7 @@ require("lazy").setup({
         { import = "lazyvim.plugins.extras.lang.python" },
         { import = "lazyvim.plugins.extras.lang.elixir" },
         { import = "lazyvim.plugins.extras.lang.gleam" },
-        { import = "lazyvim.plugins.extras.lang.scala" },
+        -- { import = "lazyvim.plugins.extras.lang.scala" },
         { import = "lazyvim.plugins.extras.lang.yaml" },
         { import = "lazyvim.plugins.extras.lang.docker" },
         { import = "lazyvim.plugins.extras.lang.toml" },
@@ -70,7 +70,7 @@ require("lazy").setup({
         { import = "lazyvim.plugins.extras.coding.luasnip" },
         -- FORMATTING
         -- { import = "lazyvim.plugins.extras.formatting.black" },
-        { import = "lazyvim.plugins.extras.dap.core" },
+        -- { import = "lazyvim.plugins.extras.dap.core" },
         { import = "lazyvim.plugins.extras.coding.yanky" },
         { import = "lazyvim.plugins.extras.lsp.none-ls" },
 
